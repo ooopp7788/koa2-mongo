@@ -1,0 +1,714 @@
+.special-ticket-wp
+  width 980px
+  margin 0 auto
+ .special-ticket-wp-banner
+  width 1160px
+  margin 0 auto
+.special-article-wp
+  width 1000px
+  margin 0 auto
+.special-article-symbol
+  width 100px
+  height 2px
+  margin-bottom 40px
+  background #534ae2
+.area-main
+  overflow hidden
+  padding-bottom 20px
+  .area
+    border-radius 3px
+    margin-top 20px
+    .area-small-info,.area-large-info
+      clear both
+    &.area-large
+      min-height 1144px
+      .area-large-info
+        height 990px
+      .btn-filter
+        width 956px
+    &.area-small
+      min-height 1022px
+      .area-small-info
+        height 864px
+      .btn-filter
+        width 956px
+    &.area-battle
+      .progress-bar
+        width 854px
+        height 46px
+        line-height @height
+        border-radius 6px
+        border 6px solid rgba(0,0,0,0.2)
+        position absolute
+        margin-left 56px
+        margin-top 126px
+        .ljia,.rjia
+          color #ffffff
+          display none
+          height 30px
+          line-height @height
+          width 60px
+          border-radius 3px
+          text-align center
+          background rgba(0,0,0,0.3)
+
+        span
+          font-size 16px
+          margin 0 14px
+          position absolute
+          &.fl
+            left 0
+            z-index 2
+          &.fr
+            right 0
+            z-index 2
+          &.bar-bottom
+            width @width
+            height @height
+            margin 0
+          &.bar
+            display block
+            height @height
+            width 0
+            margin 0
+            padding-left 1px
+
+      .team
+        width 490px
+        .list-paper
+          margin -30px 60px 50px 0
+          .pager
+            width 24px
+            height @width
+            line-height @width
+        .area-info
+          width 388px
+          height 870px
+          margin 0 auto
+          overflow hidden
+          margin-bottom 50px
+          &.pic
+            width 368px
+            border-radius 3px
+        .title
+          text-align center
+          font-size 48px
+          margin-top 40px
+          height 76px
+          overflow hidden
+        .support-top
+          height 86px
+        .btn-support
+          width 364px
+          height 40px
+          line-height @height
+          border-radius 3px
+          font-size 14px
+          text-align center
+          margin 0 auto
+          margin-bottom 20px
+          cursor pointer
+.btn-filter
+  width 364px
+  margin 0 auto
+  height 30px
+  margin-bottom 20px
+  display none
+  span
+    width 60px
+    height @height
+    margin-left 12px
+    color #999
+    background #fff
+    border 1px solid #ccc
+    border-radius 3px
+    text-align center
+    line-height @height
+    cursor pointer
+    &.active
+      background #eee
+      color #333
+
+
+
+      .teama
+        border-radius 3px 0 0 3px
+      .teamb
+        border-radius 0 3px 3px 0
+      .teamb
+        background white
+      .bar,.teama
+        background red
+
+
+
+
+
+
+
+
+
+
+.area-comm
+  margin-top 30px
+#main
+  background #ffffff
+
+.block-video-banner
+  border 1px solid #FFFFFF
+  margin 0 10px 20px
+  height 170px
+  width 1120px
+  position relative
+  overflow hidden
+  border-radius 4px
+  background #ffffff
+  &:hover
+    -webkit-box-shadow 0 3px 6px 0 rgba(0,0,0,0.20)
+    -moz-box-shadow 0 3px 6px 0 rgba(0,0,0,0.20)
+    box-shadow 0 3px 6px 0 rgba(0,0,0,0.20)
+  .block-img-banner
+    display block
+    height 104px
+    width 1120px
+    position relative
+    overflow hidden
+    .acNum
+      position absolute
+      visibility hidden
+      background: rgba(0,0,0,0.60);
+      border-radius: 4px;
+      width 80px
+      height 24px
+      font-size 12px;
+      color #FFFFFF;
+      letter-spacing 0;
+      margin -35px auto auto 20px
+      p
+        text-align center;
+        width 80px
+        heigh 24px
+        line-height 24px
+    .acNumShow
+      visibility visible
+    .acNumHide
+      visibility hidden
+
+
+  .block-title-banner-ticket
+    width:1120px
+    height:66px
+    .titleCont
+      float left
+      margin 18px auto auto 20px
+      width: 700px
+      position relative
+      overflow hidden
+      white-space: nowrap;
+      -o-text-overflow ellipsis
+      text-overflow ellipsis
+      line-height 18px
+      a
+        font-size 20px
+        font-weight bold
+        color #333333
+        &:hover
+          color #fd4c5b
+      .titlMin
+         font-weight normal
+         font-size 12px
+         padding-top 5px
+         color #999999
+    p
+      float right
+      height 66px
+      margin 18px 20px 18px auto
+      font-size 12px
+      color #333333
+      .showAddEff
+        position absolute
+        background #FD4C5B
+        border-radius 3px
+        width 46px
+        heigh 18
+        padding 1px
+        color #ffffff
+        visibility hidden
+        top 105px
+        right 105px
+        text-align center
+        font-weight bold
+      .ticketBtn
+        border-radius 4px
+        height 30px
+        line-height @height
+        width 80px
+        color #ffffff
+        text-align center
+        border 1px solid #ddd
+        font-size 18px
+        cursor pointer
+        background: #FD4C5B
+        font-weight bold
+        &:hover
+          background #F13444
+        &.disabled
+          color #ffffff
+          &:hover
+            background #F13444
+      .ticketNum
+        margin-right 16px
+        font-weight bold
+        height 30px
+        color #999999
+        font-size 20px
+        line-height @height
+  &.clearfix
+  &.large
+    height 228px
+    width 220px
+    .block-img-ticket
+      height 126px
+      width @width - 20
+    .block-title-ticket
+      b
+        margin-bottom 8px
+
+.block-video-ticket
+  border 1px solid #e5e5e5
+  margin 0 10px 20px
+  height 198px
+  width 172px
+  position relative
+  overflow hidden
+  border-radius 3px
+  background #ffffff
+  .block-img-ticket
+    display block
+    height 96px
+    width @width - 20
+    margin 10px auto
+    position relative
+    overflow hidden
+  .block-title-ticket
+    b
+      margin 0 10px
+      display block
+      position relative
+      height 36px
+      overflow hidden
+      margin-bottom 10px
+      line-height 18px
+      a
+        font-size 14px
+        color #333333
+        &:hover
+          color #fd4c5b
+    p
+      margin 0 10px
+      font-size 12px
+      color #333333
+      position relative
+      .ticketBtn
+        border-radius 3px
+        height 26px
+        line-height @height
+        width 62px
+        text-align center
+        border 1px solid #ddd
+        cursor pointer
+        &:hover
+          background #dddddd
+        &.disabled
+          color #999999
+          &:hover
+            background none
+            cursor default
+      .ticketNum
+        height 28px
+        line-height @height
+  &.large
+    height 228px
+    width 220px
+    .block-img-ticket
+      height 126px
+      width @width - 20
+    .block-title-ticket
+      b
+        margin-bottom 8px
+.block-video-article
+  margin 28px 10.5px
+  height 129px
+  width 220px
+  position relative
+  overflow hidden
+  border-radius 3px
+  .block-img-article
+    display block
+    height @height
+    width @width
+    position relative
+    overflow hidden
+  .block-title-article
+    height 28px
+    line-height @height
+    color #ffffff
+    width @width - 12
+    padding 0 6px
+    position absolute
+    left 0
+    bottom 0
+    &:hover
+      color #fd4c5b
+  &.middle
+    width 300px
+    height 169px
+    margin 28px 11.5px
+    .block-img-article
+      height @height
+      width @width
+      .block-title-article
+        width @width - 12
+  &.large
+    width 459px
+    height 259px
+    margin 28px 13px
+    .block-img-article
+      height @height
+      width @width
+    .block-title-article
+      width @width - 12
+.block-text-article
+  font-face MicrosoftYaHei
+  width 453px
+  height 259px
+  margin 28px 19px
+  .text-title
+    font-size 22px
+    height 28px
+    line-height @height
+    font-weight bold
+    margin-bottom 20px
+  .text-info
+    font-size 16px
+  &.large
+    width 944px
+    margin 28px 28px -2px
+    height auto
+    .text-title
+      margin 0 auto
+      margin-bottom 14px
+      width 944px
+      text-align center
+    .special-article-symbol
+      margin 0 auto 42px
+.area-text-article
+  margin 28px 30px
+  font-size 16px
+  width 944px
+
+
+
+
+
+
+
+.tab-list
+  margin-bottom 20px
+  ul
+    li
+      margin 0 10px
+      width 110px
+      padding 0 10px
+      text-align center
+      height 36px
+      line-height @height
+      color rgba(51,51,51,0.5)
+      cursor pointer
+      border-radius 3px
+      font-size 18px
+      overflow hidden
+      &:hover
+        color rgba(51, 51, 51, 0.5)
+        background rgba(51, 51, 51, 0.1)
+      &.active
+        color #333333
+        cursor default
+        background rgba(51, 51, 51, 0.2)
+        &:hover
+          color #333333
+          background rgba(51, 51, 51, 0.2)
+
+
+.special-banner
+  height 300px
+  position relative
+  .banner-img
+    display block
+    height @height
+    background-size auto 100%
+    position absolute
+    width 100%
+  .banner-video
+    position relative
+    top 132px
+    figure
+      display block
+      position relative
+      width 236px
+      height 156px
+      color #ffffff
+      font-size 14px
+      text-align center
+      border-radius 3px
+      .banner-video-title
+        height 24px
+        line-height @height
+        overflow hidden
+        word-wrap break-word
+      .banner-video-img
+        display block
+        height 128px
+        width 228px
+        margin 0 4px 4px
+        img
+          border-radius 3px
+  .banner-crumbs
+    position relative
+    height 80px
+    border-top-left-radius 10px
+    border-top-right-radius 10px
+    top 220px
+    background rgba(255,255,255,0.8)
+    .banner-crumbs-block
+      height @height - 28
+      margin 14px 28px
+      position absolute
+      font-size 14px
+      .crumbs-info
+        width 688px
+        span
+          display block
+          height 26px
+          line-height 36px
+          &.clearfix
+            line-height 14px
+      .crumbs-tool
+        span
+          text-align center
+          width 38px
+          margin-left 26px
+
+.rule
+  overflow hidden
+  .rule-info
+    width 940px
+    margin 36px 20px 36px
+    display none
+    word-wrap break-word
+    overflow hidden
+.area-title-ticket
+  font-size 30px
+  margin 30px 0 30px
+  text-align center
+  width 100%
+.special-article-wp
+  background #fff
+  &.area-comm
+    margin-bottom 0
+.area-margin-left
+  margin-left 10px
+//分享
+.area-share
+  position relative
+  //height 170px
+  padding-top 0
+  overflow hidden
+  .share_text
+    position relative
+    text-align center
+    font-size 16px
+    margin-top 26px
+    display none
+    p
+      margin 0 20px 26px
+.area-share,#pop-share
+  .share_box
+    position relative
+    width 488px
+    height 64px
+    margin 0 auto
+    margin-top 36px
+    a
+      float left
+      height 64px
+      width @height
+      margin 0 29px
+      padding 0
+      &.bds_tsina
+        background url("../../img/tsina.png") no-repeat
+        &.hover
+          background url("../../img/tsina-hover.png") no-repeat
+      &.bds_qzone
+        background url("../../img/qzone.png") no-repeat
+        &.hover
+          background url("../../img/qzone-hover.png") no-repeat
+      &.bds_tieba
+        background url("../../img/tieba.png") no-repeat
+        &.hover
+          background url("../../img/tieba-hover.png") no-repeat
+      &.bds_weixin
+        background url("../../img/weixin.png") no-repeat
+        &.hover
+          background url("../../img/weixin-hover.png") no-repeat
+
+
+      &.jiathis_button_tsina
+        background url("../../img/tsina.png") no-repeat
+        &.hover
+          background url("../../img/tsina-hover.png") no-repeat
+      &.jiathis_button_qzone
+        background url("../../img/qzone.png") no-repeat
+        &.hover
+          background url("../../img/qzone-hover.png") no-repeat
+      &.jiathis_button_tieba
+        background url("../../img/tieba.png") no-repeat
+        &.hover
+          background url("../../img/tieba-hover.png") no-repeat
+      &.jiathis_button_weixin
+        background url("../../img/weixin.png") no-repeat
+        &.hover
+          background url("../../img/weixin-hover.png") no-repeat
+      span
+        display none!important
+.list-paper
+  margin 0 10px 20px 0
+  height 30px
+  display none
+  .area-pager
+    span
+      cursor pointer
+      display block
+      float left
+      height 28px
+      width @height
+      line-height @height
+      text-align center
+      color #999
+      font-size 14px
+      border-radius 3px
+      border 1px solid #999
+      margin-left 8px
+      background #ffffff
+      &.active
+        background #dddddd
+        color #333333
+      &.hint,&.clearfix
+        display none
+#pop-share
+  background #f0f0f0
+  margin 0
+  width 430px
+  border-radius 3px
+  display none
+  #pop-btn-close
+    margin-top 4px
+    margin-right 10px
+    .icon-close
+      cursor pointer
+      &:hover
+        color #fd4c5b
+  .share-title
+    margin 30px auto 24px
+    width @width - 144
+    text-align center
+    font-size 24px
+    color #333333
+  .share-ensure
+    margin 0 auto 24px
+    width @width - 144
+    font-size 16px
+    color #999999
+  .btnok
+    background #e5e5e5
+    margin 24px auto 30px
+    width @width - 144
+    height 34px
+    line-height 34px
+    text-align center
+    display block
+    border-radius 3px
+    color #999999
+    font-size 16px
+    cursor pointer
+  .share_box
+    width 304px
+    margin-top 0
+    a
+      margin 0 8px
+      height 60px
+      width @height
+      &.bds_tsina
+        background-size @height
+      &.bds_qzone
+        background-size @height
+      &.bds_tieba
+        background-size @height
+      &.bds_weixin
+        background-size @height
+
+      &.jiathis_button_tsina
+        background-size @height
+      &.jiathis_button_qzone
+        background-size @height
+      &.jiathis_button_tieba
+        background-size @height
+      &.jiathis_button_weixin
+        background-size @height
+      span
+        display none!important
+.special-bubble
+  display none
+  position absolute
+  border-radius 3px
+  height 30px
+  line-height @height
+  //width 200px
+  padding 0 10px
+  font-size 14px
+  color #999999
+  border 1px solid #ddd
+  background #ffffff
+  word-wrap break-word
+  //overflow hidden
+  span
+    color #fd4c5b
+  .arrow-up
+    height 6px
+    margin-left 40px
+    margin-top -6px
+    background url("../../img/jiao.png") no-repeat
+
+
+
+
+
+
+
+
+
+
+
+.back-old
+  display none
+
+body
+  .header
+    .nav
+      top 0
+      background #f7f7f7
+      width 100%
+      .nav-parent
+        background @background
+  .tool-to-comm
+    display block !important

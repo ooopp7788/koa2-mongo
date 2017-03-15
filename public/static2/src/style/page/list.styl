@@ -1,0 +1,468 @@
+@import "../variable.styl"
+
+.header .back-old
+  display none
+
+.main
+  background #f8f8f8
+
+.third-height
+  margin-top 10px
+
+.column-right
+  margin-top -3px
+
+.column-left
+  .list-tab
+    padding 8px 0
+    margin-right 54px
+    a
+      padding 0 10px
+      height 26px
+      line-height 26px
+      display inline-block
+      color $colorGray
+      border-radius 3px
+      border 1px solid transparent
+      background none
+      &.active
+        border-color #fae7e8
+        background rgba(253, 76, 91, 0.1)
+        color #fd4c5b
+
+.area-date
+  float left
+  width auto
+  height 28px
+  line-height 28px
+  text-align center
+  border 1px solid #ccc
+  margin 4px 0 8px 203px
+  border-radius 3px
+  padding 0 7px
+  color #9a9a9a
+  .icon-calendar
+    margin 4px 4px 0 0
+    font-size 17px
+  .area-date-list
+    line-height 25px
+  span
+    margin 2px
+
+#third-view
+  width 90px
+  height 28px
+  border 1px solid #ccc
+  margin 4px 0 0 0
+  border-radius 3px
+  padding 0 0 0 14px
+  a
+    float left
+    margin 3px 12px 0 0
+    cursor pointer
+    color #9a9a9a
+    &:hover
+      color #FE4F5E
+    .icon
+      font-size 18px
+      display inline-block
+      margin-top -3px
+  a.default
+    color #fe4f5e
+
+#emotion
+  width 150px
+  height 200px
+  border 1px solid transparent
+  padding 0 75px
+  position absolute
+  left 289px
+  top 88px
+  .alert
+    width 250px
+    background #d9edf6
+    margin-left -50px
+
+#list
+  width 150px
+  height 40px
+  background #d9edf6
+  line-height 40px
+  text-align center
+  font-size 15px
+  margin-top 5px
+
+.column-left
+  header
+    position relative
+
+.module-rank
+  width 260px
+  margin-bottom 20px
+  border-radius 3px
+  li.has-img
+    overflow hidden
+    border-radius 0 3px 3px 3px
+    &.channel-rank-first
+      display block
+      height 160px
+      >span
+        height 20px
+        width @height
+        line-height @height
+      >div
+        position absolute
+        height 36px
+        top 91px
+        padding 30px 10px 3px
+        width 280px
+        b,p
+          a
+            color #fff
+            &:hover
+              color $colorRed1
+        .p1
+          float left
+          a
+            display block
+            width 110px
+            height 18px
+        .p2
+          color #fff
+          float right
+      a
+        img
+          width 300px
+          height 160px
+    >span
+      i
+        text-align center
+        text-indent 0
+
+    &.channel-rank-after
+      >span
+        background rgba(0,0,0,0.5)
+
+.module .module-footer
+  margin-top 0
+  a.more
+    background #e2e2e2
+    &:hover
+      background #dddddd
+
+.list-right-img
+  width 260px
+  margin 0 auto
+  img
+    width 260px
+    height 140px
+    border-radius 3px
+    margin-bottom 20px
+
+#list-data
+  margin-top 6px
+
+#list-pager
+  .area-pager
+    text-align center
+    .pager
+      float none
+      min-width 18px
+      padding 0 5px
+    .hint
+      float none
+//样式重置
+#channel-nav
+  background #f8f8f8
+
+.module-footer
+  margin-top 20px
+
+#list-video li a:visited
+  color #777
+  &:hover
+    color #fd4c5b
+
+.third-img
+  .up-name
+    img
+      width 24px
+      height 24px
+      border-radius 50%
+
+#list-label
+  margin 22px auto
+  span
+    font-size 16px
+    color #333
+  .icon-label
+    color #fe4f5e
+  .notes
+    font-size 12px
+    color #999
+    margin-left 20px
+  .labels
+    width 100%
+    margin 16px 0 0 0
+    a
+      margin 0 10px 10px 0
+      padding 0 10px
+      height 26px
+      line-height 26px
+      text-align center
+      display inline-block
+      background #ffffff
+      color #333
+      font-size 12px
+      border 1px solid #e1e1e1
+      border-radius 3px
+      &:hover
+        color #fd4c5b
+        border-color #f9e7e9
+    a.active
+      background #f9e7e9
+      color #fd4c5b
+      border-color #f9e7e9
+
+#list-data
+  position relative
+  .video-num
+     strong
+       margin-left 5px
+
+#list-data.th-large
+  #list-video
+    min-height 450px
+    margin-right -18px
+  .third-img
+    width 428px
+    height 90px
+    list-style none
+    margin 0 21px 20px 0
+    .text-over
+      display block
+      max-height 39px
+      word-break break-all
+      overflow hidden
+      font-size 13px
+    .img-wp
+      margin-right 14px
+    .icon
+      color #bbb
+      font-size 12px
+      margin-right 24px
+    .up-name
+      margin-bottom 5px
+      img
+        margin 7px 10px 0 0
+    .third-name
+      display inline-block
+      margin 10px 0 0 0
+      max-width 212px
+      height 16px
+      overflow hidden
+    .video-description, .video-time, .icon-comments
+      display none
+
+#list-data.th-normal
+  #list-video
+    min-height 450px
+    margin-right -20px
+  .third-img
+    width 160px
+    height 184px
+    list-style none
+    margin 0 20px 20px 0
+    .img-wp
+      img
+        width 160px
+        height 90px
+    .text-over
+      display inline-block
+      max-height 36px
+      word-break break-all
+      overflow hidden
+      margin 7px 0 -7px 0
+    .img-wp
+      margin-right 14px
+    .icon
+      color #bbb
+      font-size 12px
+      margin-right 24px
+    .up-name
+      margin-bottom 5px
+      img
+        margin 7px 10px 0 0
+    .third-name
+      display inline-block
+      margin 10px 0 0 0
+      max-width 126px
+      height 16px
+      overflow hidden
+    .video-description, .video-time, .icon-comments
+      display none
+
+#list-data.th-list
+  #list-video
+    min-height 450px
+  .third-img
+    width 100%
+    list-style none
+    margin 0 0 20px 0
+    .text-over
+      width 704px
+      display inline-block
+      height 16px
+      line-height 16px
+      word-break break-all
+      overflow hidden
+      margin 0 0 -6px 0
+      font-size 14px
+      font-weight 500
+    .img-wp
+      margin-right 14px
+    .icon
+      font-size 12px
+      margin-right 16px
+    div
+      height 35px
+      .video-num
+        color #bbb
+        float left
+        margin 10px 0 0 0
+      .up-name
+        float left
+        margin 0 24px 4px 0
+        display inline-block
+        img
+          margin 7px 10px 0 0
+    .third-name
+      max-width 192px
+      height 16px
+      display inline-block
+      margin 10px 0 0 0
+      word-break break-all
+      overflow hidden
+    .video-description
+      color #999
+      height 36px
+      width 704px
+      word-break break-all
+      word-wrap break-word
+      overflow hidden
+    .video-time
+      margin-right 44px
+
+/*@media screen and (max-width: 1440px)
+  .area-date
+    margin 4px 0 8px 171px
+
+  #list-data.th-large
+    #list-video
+      margin-right -12px
+      .third-img
+        width 416px
+        margin 0 14px 30px 0
+        .third-name
+          max-width 202px
+        .icon
+          margin-right 18px
+
+  #list-data.th-normal
+    #list-video
+      margin-right -18px
+    .third-img
+      width 200px
+      margin 0 16px 24px 0
+      .third-name
+        max-width 164px
+      .img-wp
+        img
+          width 200px
+      .icon
+        margin-right 20px
+
+  #list-data.th-list
+    #list-video
+      min-height 1200px
+      .text-over
+        width 672px
+      .video-time
+        margin-right 18px
+      .up-name
+        margin 0 16px 4px 0
+      .third-img
+        .third-name
+          max-width 194px
+        .video-num
+          float left
+          margin 10px 0 0 0
+        .video-description
+          width 672px
+
+  #emotion
+    left 273px*/
+.verified-ico
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  position: relative;
+  top: 3px;
+.verified-1
+  background: url(../../img/monkey.png) no-repeat 50% 50%
+  background-size: 18px 18px
+.verified-2
+  background: url(../../img/verified-blue.png) no-repeat 50% 50%
+  background-size: 18px 18px
+.verified-3
+  background: url(../../img/verified-yellow.png) no-repeat 50% 50%
+  background-size: 18px 18px
+
+@media screen and (max-width: 1280px)
+  .area-date
+    margin 4px 0 8px -1px
+
+  #list-data.th-large
+    #list-video
+      .third-img
+        width 330px
+        .third-name
+          max-width 122px
+
+  /*#list-data.th-normal
+    #list-video
+      margin-right -12px
+    .third-img
+      width 160px
+      height 176px
+      list-style none
+      margin 0 12px 44px 0
+      .img-wp
+        img
+          width 160px
+          height 90px
+      .third-name
+        max-width 126px*/
+
+  #list-data.th-list
+    #list-video
+      .text-over
+        width 502px
+      .video-time
+        margin-right 8px
+      .up-name
+        margin 0 8px 5px 0
+      .third-img
+        .third-name
+          max-width 66px
+          height 16px
+          overflow hidden
+        .video-num
+          margin 10px 0 0 0
+        .icon
+          margin-right 12px
+        .video-description
+          width 500px
+
+  #emotion
+    left 193px

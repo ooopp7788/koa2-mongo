@@ -1,0 +1,29 @@
+if infoData.navigations
+    -var categoryData = infoData.navigations
+    nav#nav.wp.nav   
+        .clearfix.wp.nav-parent
+            ul.clearfix
+                - var addClass = '';
+                if parentCId == 'index'
+                    - addClass = 'active';
+                li(class='nav-home #{addClass}')
+                    a(href="/") 首页
+                each categoryItem in categoryData
+                    if categoryItem.cid == parentCId
+                        - addClass = 'active';
+                    else
+                        - addClass = ""
+                    li(data-category='#{categoryItem.id}',data-cid='#{categoryItem.cid}',class='#{addClass}')
+                        a(href="#{categoryItem.link}") #{categoryItem.nav_name}
+                li.nav-rank
+                    a(href="#{config.rootDomain ||''}/rank/",target="_blank")
+                        i.icon.icon-rank
+                        | 全站排行榜
+        .nav-sub
+            .wp.nav-sub-con
+                each categoryItem in categoryData
+                    if categoryItem.children.length
+                        ul.clearfix(data-category='#{categoryItem.id}',data-cid='#{categoryItem.cid}')
+                            each sub in categoryItem.children
+                                li
+                                    a(href="#{sub.link}",data-cid='#{sub.cid}') #{sub.nav_name}

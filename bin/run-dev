@@ -1,0 +1,6 @@
+#!/usr/bin/env node
+var current_path = process.cwd();
+
+process.env.NODE_ENV = 'dev'
+
+require('runkoa')(current_path + '/bin/www' )

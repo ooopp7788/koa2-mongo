@@ -1,0 +1,122 @@
+//- 存放页面公用部分
+
+//- 右侧工具栏
+#toolbar.toolbar
+    #to-comm.icon.icon-to-comm.tool-item.tool-to-comm(title="前往评论")
+        span.pts 0
+    #to-top.icon.icon-arrow-slim-up.tool-item.tool-to-top(title="返回顶部")
+
+
+//- 二次元日历右侧锚点
+if calendarData && calendarData.img
+    #calendar-anchor.calendar-anchor
+        a(href="#{calendarData.url}",target="_blank")
+            img(src="#{calendarData.img}?imageView2/1/w/60/h/144",alt="",width="60",height="144")
+        span.btn-close 关闭
+
+#info-box.info-box
+    p 错误信息
+
+
+
+
+
+
+
+
+
+
+//- ⬇️⬇️⬇️各种没有封装的弹窗~时间紧木有时间封装啊
+
+
+//- pop弹框-mini登陆
+#pop-login(style="display:none").pop
+    .login-logo
+        img(src="http://cdn.aixifan.com/dotnet/20130418/project/sanae/style/image/area-login.png")
+    .login-tool
+        .fl.help
+            a(href="/info/#page=help" target="_blank" class="area-login-help")
+                i.icon.icon-question
+        .fl.close(title="点击关闭窗体" onclick="$.callPop('login', 'close', '', '', '');")
+            i.icon.icon-close
+    .form-login
+        .form-info
+            .area1
+                input(name="username" type="text" autocomplete="off" placeholder="请输入账号")
+            .area2
+                input(name="password" type="password" autocomplete="off" placeholder="请输入密码")
+
+        #area-captcha-login.area.area-captcha.hidden
+            input#ipt-captcha-login(name="captcha" type="text" data-direction="bottom" disabled="disabled" autocomplete="off" data-name="验证码" data-length="4,4" data-placeholder="输入验证码" required="required" placeholder="输入验证码").captcha.fl
+            //img(src="/captcha.svl" onclick="this.src='/captcha.svl?d='+(new Date()).getTime()").captcha-pic.fl
+            a#ipt-captcha-switch 换一张
+        .area-tool
+            .fl
+                a(href="/login/forgot/" target="_blank").fogetPwd 忘记密码?
+            .fr
+                | 还没有AcFun账号，
+                a(href="/reg/" title="注册新帐号" target="_blank" class="disabled inro").regAcfun 立即注册
+            .clearfix.hidden
+        #area-login-btn
+            a.login 登录
+    #area-login-tool
+        //span.fl 使用第三方登录
+        //a(href="/loginbysina.aspx" title="使用新浪微博账号登录")#btn-login-sina.fl
+        //    img(src="http://cdn.aixifan.com/dotnet/20130418/project/sanae/style/image/weibo-reg.png")
+        //a(href="/loginbyqq.aspx" title="使用腾讯QQ账号登录")#btn-login-tencent.fl
+        //    img(src="http://cdn.aixifan.com/dotnet/20130418/project/sanae/style/image/qq-reg.png")
+        //.clearfix.hidden
+
+
+//- pop弹框-confirm
+#pop-confirm.pop(style="display:none")
+    span.win-hint-ensure ( *^_^* )
+    button#btn_ok_ensure 确定
+    button#btn_cancle_ensure 取消
+
+//- pop弹框-follow
+#pop-follow.pop(style="display:none")
+    span#win-btn-close
+        i.icon.icon-close
+    span.win-hint-ensure ( *^_^* )
+    xmp#temp-item-follow.hidden
+        | <option value="[gid]">[name]([count])</option>
+    .unit
+        .fl
+            p.p1 选择分组
+        .fl
+            select#ipt-group-follow
+            p.hint 请选择分组。<br/>您添加关注的用户将出现在对应的组中。
+    .clearfix.hidden
+    .unit-tool
+        .fl
+            button#btn-do-follow 添加关注
+
+
+//- 分享更多
+#share-more(style="display:none")
+    .jiao
+    h1 把视频贴到博客或论坛
+    .area-share.clearfix
+        span.subtitle.fl 视频地址
+        input.ipt-url.fl(type="text", readonly="readonly", value="")
+        span.copy.fl.cp-url 复制
+    .area-share.clearfix
+        span.subtitle.fl FLASH地址
+        input.ipt-flash.fl(type="text", readonly="readonly", value="")
+        span.copy.fl.cp-flash 复制
+    .area-share.clearfix
+        span.subtitle.fl HTML代码
+        input.ipt-html.fl(type="text", readonly="readonly", value="")
+        span.copy.fl.cp-html 复制
+    .area-share.clearfix
+        span.subtitle.fl 通用代码
+        input.ipt-iframe.fl(type="text", readonly="readonly", value="")
+        span.copy.fl.cp-iframe 复制
+
+
+
+
+
+//- 遮罩层
+#shade-layer

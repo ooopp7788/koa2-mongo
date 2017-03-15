@@ -1,0 +1,557 @@
+@import "../variable.styl"
+
+.header
+  border-bottom: 1px solid #ececec;
+
+.search-box-bg
+  width: 100%
+  height: 100px
+  background: #fff
+  .search-box
+    top: 26px
+    width: 480px
+    height: 40px
+    margin-left: -240px
+    z-index: 2
+    form
+      width: 480px
+      height: 40px
+    input
+      line-height: 22px
+      width: 400px
+      height: 40px
+      border: 2px solid $colorRed1
+      border-right: none
+    .search-btn
+      width: 80px
+      height: 40px
+      line-height: 40px
+      i.icon
+        display: none
+      span
+        display: block
+        font-size: 16px
+  .relate
+    position: absolute
+    left: 50%
+    margin-left: -240px
+    width: 480px
+    overflow: hidden
+    white-space: nowrap
+    text-overflow: ellipsis
+    top: 72px
+    color: $colorGray2
+    .word-wrap
+      a
+        color: $colorGray1
+        margin-left: 16px
+        &:hover
+          color: $colorRed1
+.search-nav
+  border-bottom: 1px solid #ececec
+  background: #fff
+  li
+    height: 44px
+    line-height: 44px
+    font-size: 15px
+    position: relative
+    padding: 0 30px;
+    cursor: pointer;
+    margin-left: -10px;
+    &:hover
+      color: $colorRed1
+    &.active
+      color: $colorRed1
+      &:after
+        content: ""
+        background: $colorRed1
+        bottom: 0
+        position: absolute
+        width: 50px
+        height: 3px
+        left: 50%
+        margin-left: -25px
+.column-left
+  padding-top: 16px
+  .mark
+    color: $colorRed1 !important
+    display: inline !important
+  .list-warp
+    display: none
+    &.active
+      display: block
+  .filter-box
+    background: #fff
+    padding: 3px 12px
+    border: 1px solid #ECECEC
+    border-radius: 3px
+    position: relative
+    margin-bottom: 15px
+    .search-filter
+      padding: 12px 12px 4px
+      line-height: 2
+      label
+        color: $colorGray2
+        width: 6%
+      .filter-wrap
+        width: 94%
+        span
+          padding: 0 10px
+          margin-right: 8px
+          margin-bottom: 8px
+          color: #333
+          cursor: pointer
+          display: inline-block
+          &.active, &:hover
+            background: rgba(253,76,91,.1)
+            border-radius: 2px
+            color: #fd4c5b
+          &.more
+            display: none
+            width: 24px
+            height: 24px
+            position: relative
+            &:before
+              content: "···"
+              font-size: 18px
+              position: absolute
+              top: 0
+              left: 0
+              width: 100%;
+              font-weight: bold
+              text-align: center
+              line-height: 24px
+              color: #fd4c5b
+    .expand-btn
+      position: absolute
+      top:12px
+      right: 15px
+      color: $colorRed1
+      cursor: pointer
+      span
+        display: block;
+        padding: 5px
+      .hidden
+        display: none
+    &.simple-mode
+      .search-filter
+        display: inline-block
+        label
+          width: auto
+        .filter-wrap
+          width: auto
+          padding-left: 5px
+          span
+            &.extra
+              display: none
+            &.more
+              display: block
+        &.child-channel-filter
+          display: none
+      .sort-filter
+        .more:after
+          content: ""
+          background: #e1e1e1
+          width: 1px
+          height: 16px
+          top: 5px
+          position: absolute
+          right: -10px
+  .result-count
+    margin-bottom: 20px
+    color: #999
+  .video-anchor-box, .video-bangumi-wrap, .video-album-wrap,.article-album-wrap
+    >:last-child
+      margin-bottom: 20px
+  .bangumi-cell-left, .album-cell-left
+    display: block;
+    position: relative;
+    img
+      width: 160px
+      height: 214px
+      border-radius: 5px
+    span
+      display: block;
+      position: absolute;
+      top: 10px
+      left: 10px
+      background: rgba(0,0,0,.5)
+      width: 56px
+      height: 28px
+      font-size: 16px
+      color: #fff
+      line-height: 28px
+      text-align: center
+      border-radius: 3px
+  .bangumi-cell-right, .album-cell-right
+    width: 720px
+    box-sizing: border-box
+    padding-left: 20px
+    .cell-title
+      font-size: 18px;
+      line-height: 24px;
+      overflow: hidden
+      text-overflow: ellipsis
+      white-space: nowrap
+    .cell-info
+      padding-top: 14px
+      font-size: 14px
+      color: #999
+    .cell-tags
+      padding-top: 10px
+    .description
+      text-align: justify
+      padding-top: 5px
+      max-height: 77px
+      overflow: hidden
+  .video-bangumi-wrap, .video-album-wrap
+    .more
+      margin-top: -5px
+      color: #666
+      cursor: pointer
+
+  .video-cell-left
+    img
+      width: 160px
+      height: 90px
+      border-radius: 2px
+  .video-cell-right
+    width: 720px
+    padding-left: 16px
+    box-sizing: border-box
+    .title
+      font-size: 15px
+      line-height: 15px
+      overflow: hidden
+      text-overflow: ellipsis
+      white-space: nowrap
+      a
+        color: #333
+        &:hover
+          color: #fd4c5b
+    .video-info
+      color: #999
+      margin: 11px 0 1px
+      img
+        width: 20px
+        height: 20px
+        border-radius: 50%
+        position: relative
+        top: -2px
+      .user-name
+        margin-left: 8px
+      .video-data
+        margin-left: 30px
+    .description
+      overflow: hidden
+      text-overflow: ellipsis
+      white-space: nowrap
+      height: 21px
+      color: #999
+    .video-tags
+      max-width: 78%
+      overflow: hidden
+      text-overflow: ellipsis
+      white-space: nowrap
+      color: #999
+      .tag
+        color: #310000
+        margin-right: 3px
+        &:hover
+          color: $colorRed1
+    .video-channel
+      margin-left: 30px
+      position: relative
+      &:before
+        content: "/"
+        color: #999
+        position: absolute
+        left: -18px
+        top: -4px
+        font-size: 17px
+
+
+  .album-cell-right
+    width: 720px
+    box-sizing: border-box
+    .album-info
+      font-size: 12px
+      .avatar
+        img
+          width: 20px
+          height: 20px
+          border-radius: 50%
+      .user-name
+        margin-left: 10px
+      .album-data
+        margin-left: 24px
+
+  .album-cell, .bangumi-cell, .video-cell
+    padding-bottom: 25px
+
+  .bangumi-cell-right
+    .sets
+      padding-top: 15px
+      a
+        display: inline-block;
+        background: #FFFFFF;
+        border: 1px solid #E1E1E1;
+        border-radius: 3px;
+        width: 58px
+        height: 30px
+        line-height: 30px
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        text-align: center;
+
+  .article-cell
+    padding-top: 20px
+    &:last-child
+      .article-cell-right
+        border-bottom: none
+  .article-cell-left
+    width: 75px
+    text-align: right;
+    color: #999
+    span
+      font-size: 28px
+      line-height: 28px
+      margin-bottom: 5px
+      display: block;
+      color: #FD4C5B
+  .article-cell-right
+    width: 785px
+    margin-left: 20px
+    padding-bottom: 20px
+    border-bottom: 1px solid #EAEAEA
+    .title
+      font-size: 16px
+      line-height: 16px
+      overflow: hidden
+      text-overflow: ellipsis
+      white-space: nowrap
+      a
+        color: #333
+        &:hover
+          color: #FD4C5B
+    .article-info
+      margin-top: 10px
+      img
+        width: 24px
+        height: @width
+        border-radius: 50%
+      .user-name
+        padding-left: 10px
+      .article-data
+        padding-left: 30px
+    .description
+      overflow: hidden
+      text-overflow: ellipsis
+      white-space: nowrap
+      height: 21px
+      color: #999
+      margin: 3px 0
+    .article-tags
+      color: #999
+      .tag
+        margin-right: 3px
+
+  .uper-cell
+    padding-top: 20px
+    &:last-child
+      .article-cell-right
+        border-bottom: none
+    .uper-cell-left
+      img
+        width: 56px
+        height: @width
+        border-radius: 50%
+  .uper-cell-right
+    width: 804px
+    margin-left: 20px
+    padding-bottom: 20px
+    border-bottom: 1px solid #EAEAEA
+    position: relative
+    min-height: 68px
+    .user-name
+      font-size: 16px
+      line-height: 16px
+      max-width: 350px
+    .uper-info
+      line-height: 30px
+      max-width: 350px
+    .description
+      max-width: 350px
+      max-height: 38px
+      overflow-y: hidden;
+      text-align: justify;
+    .uper-recently
+      position: absolute;
+      right: 50px
+      top: 0;
+      width: 360px
+      .uper-post
+        width: 102px
+        height: 68px
+        display: block
+        margin-right: 18px
+        overflow: hidden
+        border-radius: 3px
+        color: #fff;
+        .translucent
+          height: 100%
+          width: 100%
+          border-radius: 3px
+          box-sizing: border-box
+          padding: 10px
+          span
+            display: block
+            overflow: hidden
+            height: 38px
+        &.video
+          .translucent
+            background: rgba(0,0,0,.5)
+    .uper-more-btn
+      position: absolute
+      right: 0
+      top: 10px
+      width: 58px
+      padding-bottom: 15px
+      background: url(../../img/page/search/more.png) no-repeat 0 100%
+      background-size: 25px auto
+      font-size: 13px
+      color: #FD4C5B
+      line-height: 16px
+
+.video-anchor-box
+  position: relative
+  >p
+    width: 72px
+    height: 24px
+    line-height: 24px
+    position: absolute
+    right: 0
+    top: 0
+    border-radius: 12px
+    color: #fff
+    background: #FF9001
+    text-align: center
+  .anchor-name
+    line-height: 32px
+    a
+      margin-right: 12px
+    img
+      width: 32px
+      height: 32px
+      border-radius: 50%
+  .anchor-video-wrap
+    padding-top: 12px
+    .anchor-video
+      width: 205px
+      position: relative
+      &:not(:last-child)
+        margin-right:20px
+      .anchor-video-img
+        display: block;
+        img
+          width: 205px
+          height: 116px
+          border-radius: 3px
+      .anchor-video-title
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        margin-top: 4px;
+        display: block;
+      .livingTag
+        background: $colorRed1
+        color: #fff
+        border-radius: 3px
+        text-align: center
+        display: none
+        height: 20px
+        width: 48px
+        position: absolute
+        right: 0
+        top: 0
+      &.is-live
+        .livingTag
+          display: block
+
+
+
+
+.column-right
+  padding-top: 16px
+  .ad
+    padding-bottom: 20px
+    display: block;
+    &.hidden
+      display: none
+    img
+      width: 260px
+      height: 147px
+      border-radius: 3px
+  .module-recommend
+    .module-title
+      line-height: 23px
+      color: #333
+    .module-wrap
+      .module-cell
+        margin-bottom: 20px
+      .cover-image
+        width: 260px
+        height: 146px
+        border-radius: 3px
+      .title
+        font-size: 12px
+        color: #333
+        line-height: 18px
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        margin: 7px 0;
+        display: block;
+      .user-info
+        padding-bottom: 7px
+        a
+          margin-right: 5px
+        img
+          width: 24px
+          height: 24px
+          border-radius: 50%
+      .video-info
+        font-size: 12px
+        color: #999999
+        line-height: 12px
+
+
+@media screen and (max-width: 1280px)
+  .column-left
+    .filter-box
+      .search-filter
+        label
+          color: $colorGray2
+          width: 8%
+        .filter-wrap
+          width: 92%
+      &.simple-mode
+        .search-filter
+          padding: 12px 0 4px
+        .sort-filter
+          .more:after
+            display: none
+
+    .bangumi-cell-right, .album-cell-right, .video-cell-right
+      width: 540px
+    .article-cell-right
+      width: 605px
+    .uper-cell-right
+      width: 624px
+      .user-name
+        max-width: 214px
+      .uper-info
+        max-width: 214px
+      .description
+        max-width: 214px

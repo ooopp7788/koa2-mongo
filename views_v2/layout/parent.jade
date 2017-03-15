@@ -1,0 +1,22 @@
+doctype
+html
+    head
+        include ../include/head_meta
+        include ../include/head_style
+        include ../include/head_config
+        block head
+    body
+        header.header
+            include ../include/content_topbar
+            include ../include/content_nav
+            include ../include/content_banner
+        section.main
+            block content
+        footer.footer
+            include ../include/content_footer
+        block foot
+        include ../include/Widgets_toobar
+
+include ../include/foot_script
+block scripts
+include ../third/baidu_manager

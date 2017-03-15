@@ -1,0 +1,1735 @@
+@import "base.styl"
+
+@font-face {
+  font-family: 'AcFun Symbol';
+  src: url('../font/AcFunSymbol-Regular.eot');
+  src: url('../font/AcFunSymbol-Regular.eot?#iefix') format('embedded-opentype'),
+          url('../font/AcFunSymbol-Regular.woff') format('woff'),
+          url('../font/AcFunSymbol-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body
+  font-family "AcFun Symbol","Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", STHeiti, sans-serif
+  font-size $fontSizeSmall
+  color $colorGray1
+  line-height 1.6
+  background #f8f8f8
+
+img
+  vertical-align top
+
+input
+  padding 0
+  font-family "AcFun Symbol", "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", STHeiti, sans-serif
+input::-webkit-input-placeholder
+  color #b5b5b5
+
+input, button
+  outline none
+.crop-margin
+  margin-right -20px
+a
+  text-decoration none
+  color $colorGray
+  outline none
+  &:hover
+    color $colorRed1
+
+.fl
+  float left
+
+.fr
+  float right
+
+.mr0
+  margin-right 0!important
+
+//清除浮动
+.clearfix
+  zoom 1
+
+.clearfix
+  &:after
+    content "."
+    display block
+    height 0
+    clear both
+    visibility hidden
+    font-size 0
+
+//设置文字溢出隐藏
+.text-overflow
+  max-width 100%
+  display inherit
+  overflow hidden
+  word-break break-all
+  word-wrap normal
+  white-space nowrap
+  text-overflow ellipsis
+  -o-text-overflow ellipsis
+  -ms-text-overflow ellipsis
+
+.hidden
+  display none
+
+.no-select
+  -webkit-user-select none
+  -moz-user-select none
+  -ms-user-select none
+  -o-user-select none
+  user-select none
+
+.mask-gradient
+  background url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAA3CAMAAAD66NALAAAAYFBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD6T+iNAAAAIHRSTlMLmpaTjoqEe3RrZF1XTDstJB4ZEwYCgHBSR0RANjMpD6oEnW4AAAA6SURBVAjXDcGDAcAAAMCwzrb9/5drwuLZ0sfk0YN7v3R+uGl9cXLQeKd25dKFN3JnXkmdOHbk0AHBD7zJAtiWTSaPAAAAAElFTkSuQmCC")  0 bottom repeat-x
+
+
+//设置区域宽度
+.wp
+  width 1160px
+  margin 0 auto
+
+//加载中
+.loading-img
+  display block
+  margin 30px auto
+
+.mask-video
+  position relative
+  i
+    $iconWidth = 50px
+    position absolute
+    width $iconWidth
+    height $iconWidth
+    top 50%
+    left 50%
+    margin -25px 0 0 -25px
+    border-radius 50%
+    background rgba(0,0,0,0.7)
+    text-align center
+    line-height 50px
+    &:before
+      color #fff
+      position absolute
+      top 1px
+      left 15px
+      font-size 26px
+  &:hover
+    .mask-video-icon
+      opacity 1
+      transition all .5s ease
+  .mask-video-icon
+    background rgba(0,0,0,0.3)
+    position absolute
+    top 0
+    left 0
+    width 100%
+    height 100%
+    text-align center
+    opacity 0
+    z-index 2
+    border-radius 3px
+
+//全站通知
+.header-notice
+  display none
+.notice
+  .main
+    >section:nth-child(1)
+      padding: 58px 10px 0 10px;
+    #channel-nav
+      margin-top 92px
+  .header-notice
+    position fixed
+    width 100%
+    height 45px
+    top 0
+    background #FFFFEE
+    z-index 10
+    border-bottom  1px solid #EEEEEE
+    line-height 45px
+    display block
+    >.wp
+      font-size 100%
+    img
+      margin-top 15px
+    p
+      color $colorGray2
+      margin-left 10px
+      max-width: 1000px
+    a
+      color #329CDA
+      margin-left 10px
+    i
+      color #CCCCCC
+      margin-top 1px
+      cursor pointer
+  .header
+    position relative
+    top 46px
+    .header-top
+      top 46px
+    &.fixed .nav
+      top 92px!important
+
+//头部样式
+$navHeight = 46px
+$headerTopHeight = 46px
+.header
+  background #fff
+  line-height $headerTopHeight
+  padding-top $headerTopHeight
+  &.fixed
+    .nav
+      position fixed
+      top $headerTopHeight !important
+      left 0
+      box-shadow 0 3px 3px rgba(0,0,0,0.1)
+      background #f8f8f8
+      width 100%
+      padding-bottom 0
+      .nav-parent
+        background none
+    .header-banner
+      margin-top 0
+
+  .header-top
+    position fixed
+    top 0
+    left 0
+    width 100%
+    background #fff
+    height $headerTopHeight
+    font-size 12px
+    box-sizing border-box
+    z-index 10
+  .logo
+    a
+      display block
+      height 27px
+      padding 8px 0 12px
+      margin-right 12px
+  .header-guide
+    height $headerTopHeight
+    display inline-block
+    text-align right
+    margin-right -10px
+  .guide-item
+    position relative
+    height $headerTopHeight
+    display inline-block
+    vertical-align: top;
+    text-align center
+    &.hover
+      .item
+      > .icon
+        &:before
+          color $colorRed1
+      .guide-item-con
+        display block
+    a.more
+      color #555555
+      height 36px
+      line-height 36px
+      display block
+      text-align center
+      background #f7f7f7
+      margin-top 10px
+      &:hover
+        background #e4e4e4
+    .icon
+      &:before
+        font-size 18px
+        vertical-align middle
+        color #909699
+
+    ul
+      padding 0 12px
+    li
+      line-height 20px
+      padding 5px 0
+      a
+        &:hover
+          color #ff0000
+  .item
+    display block
+    height $headerTopHeight
+    padding 0 10px
+    font-size 12px
+  .guide-item-con
+    position absolute
+    top ($headerTopHeight - 4)
+    left 0
+    text-align left
+    background #fff
+    width 210px
+    box-shadow 0 5px 5px rgba(0, 0, 0, 0.2)
+    font-size 12px
+    display none
+    border-radius 0 0 3px 3px
+
+  .user-login
+    &.hover, &:hover
+      color $colorRed1
+  .guide-user
+    &.user-logined
+      .user-avatar
+        display block
+      .user-login
+        display none
+      &.hover
+        .guide-item-con
+          display block
+
+    &.hover
+      .guide-item-con
+        display none
+    p
+      height 36px
+      line-height 36px
+      padding 0 10px
+    .user-logout
+      color $colorGray2
+      font-size 12px
+      &:before
+        font-size 12px
+        margin-right 3px
+
+  .user-avatar
+    display none
+    overflow hidden
+    vertical-align top
+    img
+      margin-top 9px
+      border-radius 50%
+
+  .user-message-count
+    height 14px
+    padding 0 5px
+    line-height 14px
+    border-radius 7px
+    position absolute
+    right 6px
+    top 3px
+    text-align center
+    background #fd4c5b
+    color #fff
+    font-size 12px
+
+  .guide-history
+    > a
+      height $headerTopHeight
+      display block
+    p
+      color #b7b7b7!important
+      text-align left!important
+      font-size 12px!important
+
+  .download-app
+    position relative
+    text-align right
+    height 40px
+    padding 0 10px
+    &.right
+      div
+        left auto
+        right 0
+    a
+      font-size 12px
+      width auto
+      color $colorGray
+      &:hover
+        color $colorRed1
+    i.icon
+      vertical-align -1px
+      &:before
+        color $colorRed1
+
+    div
+      display none
+      text-align center
+      position absolute
+      top $navHeight
+      padding 10px
+      background #fff
+      box-shadow 0 5px 5px rgba(0, 0, 0, 0.2)
+      left 0
+      border-radius 0 0 3px 3px
+
+  .guide-upload
+    .guide-item-con
+      padding 10px 0
+      width 100px
+
+  .nav
+    top 180px
+    z-index 9
+    height $navHeight
+    line-height $navHeight
+    font-size 14px
+    position relative
+    width 100%
+    border-bottom 1px solid #e5e5e5
+    background #fff
+    &.hover
+      .nav-sub
+        display block
+    li
+      float left
+      margin-right 35px
+      a
+        display block
+        padding 0 6px
+        color #333
+        height $navHeight
+      &:hover,&.hover,&.active
+        a
+          color $colorRed1
+      &.active
+        a
+          border-bottom 3px solid $colorRed1
+          box-sizing border-box
+      &:last-of-type
+        margin-right 0
+
+    .nav-rank
+      float right
+      i
+        color $colorRed1
+        margin-right 3px
+        vertical-align -1px
+    .nav-parent
+      height $navHeight
+      background #fff
+      padding 0 10px
+      border-radius 3px 3px 0 0
+      ul
+        height $navHeight
+        overflow hidden
+    .nav-sub
+      height 40px
+      line-height 40px
+      overflow hidden
+      display none
+      background rgba(255,255,255,0.9)
+      box-shadow 0 3px 3px rgba(0,0,0,0.1)
+      border-top 1px solid #e5e5e5
+      position relative
+      border-radius 0 0 3px 3px
+      ul
+        display none
+        position absolute
+        top 0
+        white-space nowrap
+        li
+          display inline-block
+          float none
+          margin-right 20px
+          &:last-of-type
+            margin-right 0
+        a
+          &.hover,&:hover
+            color $colorRed1
+      .nav-sub-con
+        position relative
+
+
+  //banner
+  .header-banner
+    height 180px
+    position relative
+    margin-bottom $navHeight
+    margin-top -($navHeight)
+    overflow hidden
+    .banner-href
+      display block
+      height 180px
+      background no-repeat center top
+      background-size auto 100%
+      position absolute
+      z-index 1
+      width 100%
+    .banner-logo
+      position relative
+      z-index 2
+      a
+        width 200px
+        height 80px
+        position absolute
+        left 20px
+        top 60px
+    span.point
+      position absolute
+      background #fff
+      padding 10px 20px
+      border-radius 6px
+      line-height 1
+      color $colorGray1
+      border 1px solid #ccc
+      transition opacity .5s ease .5s
+      z-index 3
+      &.left
+        &:after, &:before
+          right -7px
+          border-width 7px 0 7px 7px
+          border-color transparent transparent transparent #ccc
+          left auto
+        &:before
+          right -6px
+          border-color transparent transparent transparent #fff
+      &:after, &:before
+        display block
+        position absolute
+        left -7px
+        top 9px
+        content ''
+        border-width 7px 7px 7px 0
+        border-style solid
+        border-color transparent #ccc transparent transparent
+        z-index 1
+      &:before
+        z-index 2
+        left -6px
+        border-color transparent #fff transparent transparent
+
+//挂件
+.header-pendant
+  width 222px
+  height 180px
+  position absolute
+  right 0
+  top 0
+  background center center no-repeat
+  z-index 1
+
+//导航搜索
+.search-box
+  $height = 32px
+  $inputPaddingLeftRight = 10px
+  $inputWidth = 316px
+  $buttonWidth = 46px
+  $width = ($inputWidth + $buttonWidth)
+  display inline-block
+  position absolute
+  height $height
+  top (($headerTopHeight - $height)/2)
+  left 50%
+  margin-left -($width/2)
+  width $width
+
+  form
+    vertical-align top
+    height $height
+  .icon
+    position absolute
+    left 0
+    top 0
+    height $height
+    width 30px
+    &:before
+      font-size 14px
+      color #fff
+
+  input
+    border 1px solid #e5e5e5
+    border-right none
+    padding 8px $inputPaddingLeftRight
+    height $height
+    line-height 14px
+    border-radius 3px 0 0 3px
+    width $inputWidth
+    vertical-align top
+    color $colorGray2
+    box-sizing border-box
+  .search-btn
+    border none
+    width $buttonWidth
+    height $height
+    line-height $height
+    font-size 14px
+    vertical-align top
+    background $colorRed1
+    color #fff
+    border-radius 0 3px 3px 0
+    padding 0
+    cursor pointer
+    position relative
+    &:hover
+      background #eb4556
+    i.icon
+      width $buttonWidth
+      display inline
+      &:before
+        font-size 16px
+    span
+      display none
+
+  .search-result
+    background rgba(255,255,255,0.95)
+    position absolute
+    width 316px
+    box-shadow 0 2px 4px rgba(0,0,0,0.2)
+    border-radius 3px
+    overflow hidden
+    opacity 0.9
+    li
+      line-height $height
+      padding 0 10px
+
+      &:hover, &.active
+        background-color rgba(253,76,91,0.1)
+        a
+          color $colorRed1
+        .light
+          color $colorRed1
+      a
+        color $colorGray2
+        display block
+
+    .light
+      color $colorGray
+    .search-history-tool,.hot-search
+      display block
+      line-height $height
+      margin 0 10px
+      border-bottom 1px solid #eee
+      color $colorGray2
+    .clear-history
+      cursor: pointer
+
+    .search-history-body
+      padding-right: 10px
+      padding-top: 10px
+      a
+        margin: 0 0 10px 10px
+        padding: 3px 8px
+        border: 1px solid #e1e1e1
+        background: #fff
+        border-radius: 3px
+        line-height: 19px
+        float: left
+    .search-hot-ul
+      .search-hot-item
+        a
+          color $colorRed1
+        .num
+          color $colorRed1
+      .num
+        margin-right 12px
+
+
+//吸顶导航
+.top-nav
+  display none
+  float left
+
+
+
+//主体
+.main
+  margin-bottom 50px
+  position relative
+  z-index 1
+  .nav
+    background #f8f8f8
+    z-index 8
+    height 46px
+    line-height @height
+    font-size 14px
+    .nav-sub
+      height 46px
+      line-height @height
+      overflow hidden
+      display block
+      padding-left: 10px
+      ul
+        top 0
+        white-space nowrap
+        li
+          display inline-block
+          float none
+          margin-right 40px
+          &.active
+            a
+              color #fd4c5b
+
+//页脚
+.footer
+  padding 20px 0
+  background-color #ececec
+  font-size 12px
+  .footer-top
+    margin-bottom 28px
+  .footer-nav
+    div
+      float left
+      height 86px
+      line-height 28px
+      border-right 1px solid #e5e5e5
+      padding 0 46px
+      &:last-of-type
+        border-right none
+      h5
+        line-height 30px
+        color #b5b5b5
+      a
+        color #333
+        margin-right 24px
+        display inline-block
+      img
+        vertical-align -1px
+      .new
+        background $colorRed1
+        color #fff
+        width 28px
+        height 12px
+        line-height 10px
+        border-radius 6px
+        text-align center
+        font-size 12px
+        display inline-block
+        margin-left 3px
+    .item-cooperation
+      padding-left 0
+    .item-official
+      .i-o-ewm
+        position relative
+        cursor pointer
+        &:hover .i-o-code
+          display block
+        .i-o-code
+          display none
+          position absolute
+          top 25px
+          img
+            width 140px
+            height 140px
+    .item-function
+      a
+        &:nth-child(3)
+          margin-right 0
+  .footer-link
+    line-height 24px
+    margin-bottom 20px
+    color #999
+    a
+      color #999
+    div
+      float left
+      width auto //- width 169px
+      padding-left 18px
+    .item-link1
+      padding-left 0
+      //-margin-right 32px
+    .item-link3
+      width auto
+      padding-left 59px
+    .item-link4
+      width auto
+      padding-left 52px
+
+    .item-icon-1,.item-icon-2,.item-icon-3
+      background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAQCAMAAABA3o1rAAABTVBMVEUAAADWAA8EnOfWAA/YAA8Ald7nAAHfAAgAluDYAA8Anu0AkuIAl94Alt8CoO8Am+LYAA8GmeUAo/TUBhHgAQfWAgvgAAcAieToAANbWosAnOU+dKzjAATVAA/VABAAj9kAneXTAA/lAAHsAAAAmOcDoe8Aq//QChQAluDwAAHaChAApejHEh0AmucAld/VABEAe75TW40Ahc3UAAYAl+rxAAZgWIwAn+LJAAbwAAZSYJRmVYMnis4AqPyrGyneAAoAqv3WABG1KT213evWAA/S6vMAluD6/PwAh7vg8fcFi74BdrDC4+9MqM7q9fr1+/3N6PIBgbTy+f3t9/vc7/bJ5fCNyuF4wNwxnsj////w+Puq1+cAleBpt9X2/f6Z0uYAmeM1l8QelsMakL3TABDl8PuOw93X6fj98vEAn+0AneoAkd/tcnLXABHZABBZG46EAAAAQ3RSTlMAzybp3/399+zV0dHMyL25tbCrjIVqXkFBQDIVDPvy39jY1cLAsp2dm5iTko2MiHJhWVNTUVBNSEhFNjQhIB4ZFxML8b/YSQAAAWlJREFUKM91kcVWY1EURCsQaNy1od3d3fu6Pbe4Aa3w/0PCW8kM9qzOXmdShfMQsQqCpC5wAR5JG78UscTDmIlHi4tzT/ZQ4jeimtewfhQ1/LFf/cf/LL34WoaEkSRzhel16jZNytPl5almd3V3/dYOABEQz4WDWu5CF7HUP/O3m83u2seH0yeV94BgXkubrOa1jM7rLAK2Fzjna59/PrhCj2+8gmLQskey3GipwRK8nud85v4X4Nv6JKXVLQsmddHL2qGRmiHF8vB/YQJDfqxQSisWVvYLZ48OW6G0SPH8WpfPPP0O7D+rUjr5XykhtevkxtUK01YKeHmd86m7e/sbV4d+87cI4GTYOur0w75DUAfwbr75d+nTxiV6UN0CBGnHUkszyAfG80lZ1fbcnd3HQz/75iwpIpJC6tDksSBq1OTbe9P0oPJhVDUBgiwLABJhxObN2crKzjgdEhYDHiv/L5ibpZbF5dynAIdWsI2ALm4AAAAASUVORK5CYII=') no-repeat 0 0;
+      display inline-block
+      width 16px
+      height 16px
+      margin-right 8px
+      vertical-align middle
+    .item-icon-2
+      background-position -16px 0
+    .item-icon-3
+      background url('data:image/png;base64,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0p8zAAA7SGlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4KPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS41LWMwMjEgNzkuMTU1NzcyLCAyMDE0LzAxLzEzLTE5OjQ0OjAwICAgICAgICAiPgogICA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPgogICAgICA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIgogICAgICAgICAgICB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iCiAgICAgICAgICAgIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIgogICAgICAgICAgICB4bWxuczpzdEV2dD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlRXZlbnQjIgogICAgICAgICAgICB4bWxuczpwaG90b3Nob3A9Imh0dHA6Ly9ucy5hZG9iZS5jb20vcGhvdG9zaG9wLzEuMC8iCiAgICAgICAgICAgIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIKICAgICAgICAgICAgeG1sbnM6dGlmZj0iaHR0cDovL25zLmFkb2JlLmNvbS90aWZmLzEuMC8iCiAgICAgICAgICAgIHhtbG5zOmV4aWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20vZXhpZi8xLjAvIj4KICAgICAgICAgPHhtcDpDcmVhdG9yVG9vbD5BZG9iZSBQaG90b3Nob3AgQ0MgMjAxNCAoV2luZG93cyk8L3htcDpDcmVhdG9yVG9vbD4KICAgICAgICAgPHhtcDpDcmVhdGVEYXRlPjIwMTUtMTEtMTBUMTQ6MDQ6NTArMDg6MDA8L3htcDpDcmVhdGVEYXRlPgogICAgICAgICA8eG1wOk1ldGFkYXRhRGF0ZT4yMDE1LTExLTEwVDE0OjA0OjUwKzA4OjAwPC94bXA6TWV0YWRhdGFEYXRlPgogICAgICAgICA8eG1wOk1vZGlmeURhdGU+MjAxNS0xMS0xMFQxNDowNDo1MCswODowMDwveG1wOk1vZGlmeURhdGU+CiAgICAgICAgIDx4bXBNTTpJbnN0YW5jZUlEPnhtcC5paWQ6ODBiY2E5ODUtNGY5Yi02ZTRkLTlmYzktZThmNDkyNjdkZjRlPC94bXBNTTpJbnN0YW5jZUlEPgogICAgICAgICA8eG1wTU06RG9jdW1lbnRJRD5hZG9iZTpkb2NpZDpwaG90b3Nob3A6ZWRkYWU4MGMtODc3MC0xMWU1LTg0OWEtYmNmZGE2MDI4ZjJlPC94bXBNTTpEb2N1bWVudElEPgogICAgICAgICA8eG1wTU06T3JpZ2luYWxEb2N1bWVudElEPnhtcC5kaWQ6ZDAxN2I5NGUtOTRiZC0yNjQxLThmZjktYmY3YTBhMzY3N2IxPC94bXBNTTpPcmlnaW5hbERvY3VtZW50SUQ+CiAgICAgICAgIDx4bXBNTTpIaXN0b3J5PgogICAgICAgICAgICA8cmRmOlNlcT4KICAgICAgICAgICAgICAgPHJkZjpsaSByZGY6cGFyc2VUeXBlPSJSZXNvdXJjZSI+CiAgICAgICAgICAgICAgICAgIDxzdEV2dDphY3Rpb24+Y3JlYXRlZDwvc3RFdnQ6YWN0aW9uPgogICAgICAgICAgICAgICAgICA8c3RFdnQ6aW5zdGFuY2VJRD54bXAuaWlkOmQwMTdiOTRlLTk0YmQtMjY0MS04ZmY5LWJmN2EwYTM2NzdiMTwvc3RFdnQ6aW5zdGFuY2VJRD4KICAgICAgICAgICAgICAgICAgPHN0RXZ0OndoZW4+MjAxNS0xMS0xMFQxNDowNDo1MCswODowMDwvc3RFdnQ6d2hlbj4KICAgICAgICAgICAgICAgICAgPHN0RXZ0OnNvZnR3YXJlQWdlbnQ+QWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgKFdpbmRvd3MpPC9zdEV2dDpzb2Z0d2FyZUFnZW50PgogICAgICAgICAgICAgICA8L3JkZjpsaT4KICAgICAgICAgICAgICAgPHJkZjpsaSByZGY6cGFyc2VUeXBlPSJSZXNvdXJjZSI+CiAgICAgICAgICAgICAgICAgIDxzdEV2dDphY3Rpb24+c2F2ZWQ8L3N0RXZ0OmFjdGlvbj4KICAgICAgICAgICAgICAgICAgPHN0RXZ0Omluc3RhbmNlSUQ+eG1wLmlpZDo4MGJjYTk4NS00ZjliLTZlNGQtOWZjOS1lOGY0OTI2N2RmNGU8L3N0RXZ0Omluc3RhbmNlSUQ+CiAgICAgICAgICAgICAgICAgIDxzdEV2dDp3aGVuPjIwMTUtMTEtMTBUMTQ6MDQ6NTArMDg6MDA8L3N0RXZ0OndoZW4+CiAgICAgICAgICAgICAgICAgIDxzdEV2dDpzb2Z0d2FyZUFnZW50PkFkb2JlIFBob3Rvc2hvcCBDQyAyMDE0IChXaW5kb3dzKTwvc3RFdnQ6c29mdHdhcmVBZ2VudD4KICAgICAgICAgICAgICAgICAgPHN0RXZ0OmNoYW5nZWQ+Lzwvc3RFdnQ6Y2hhbmdlZD4KICAgICAgICAgICAgICAgPC9yZGY6bGk+CiAgICAgICAgICAgIDwvcmRmOlNlcT4KICAgICAgICAgPC94bXBNTTpIaXN0b3J5PgogICAgICAgICA8cGhvdG9zaG9wOkRvY3VtZW50QW5jZXN0b3JzPgogICAgICAgICAgICA8cmRmOkJhZz4KICAgICAgICAgICAgICAgPHJkZjpsaT4zQ0I4RkVFOEMyRUJFNkU1QTREQTk3MzI4MzU0MTI0RTwvcmRmOmxpPgogICAgICAgICAgICAgICA8cmRmOmxpPmFkb2JlOmRvY2lkOnBob3Rvc2hvcDpiZGRmY2Y2Zi04NzcwLTExZTUtODQ5YS1iY2ZkYTYwMjhmMmU8L3JkZjpsaT4KICAgICAgICAgICAgPC9yZGY6QmFnPgogICAgICAgICA8L3Bob3Rvc2hvcDpEb2N1bWVudEFuY2VzdG9ycz4KICAgICAgICAgPHBob3Rvc2hvcDpDb2xvck1vZGU+MzwvcGhvdG9zaG9wOkNvbG9yTW9kZT4KICAgICAgICAgPHBob3Rvc2hvcDpJQ0NQcm9maWxlPnNSR0IgSUVDNjE5NjYtMi4xPC9waG90b3Nob3A6SUNDUHJvZmlsZT4KICAgICAgICAgPGRjOmZvcm1hdD5pbWFnZS9wbmc8L2RjOmZvcm1hdD4KICAgICAgICAgPHRpZmY6T3JpZW50YXRpb24+MTwvdGlmZjpPcmllbnRhdGlvbj4KICAgICAgICAgPHRpZmY6WFJlc29sdXRpb24+NzIwMDAwLzEwMDAwPC90aWZmOlhSZXNvbHV0aW9uPgogICAgICAgICA8dGlmZjpZUmVzb2x1dGlvbj43MjAwMDAvMTAwMDA8L3RpZmY6WVJlc29sdXRpb24+CiAgICAgICAgIDx0aWZmOlJlc29sdXRpb25Vbml0PjI8L3RpZmY6UmVzb2x1dGlvblVuaXQ+CiAgICAgICAgIDxleGlmOkNvbG9yU3BhY2U+MTwvZXhpZjpDb2xvclNwYWNlPgogICAgICAgICA8ZXhpZjpQaXhlbFhEaW1lbnNpb24+MjA8L2V4aWY6UGl4ZWxYRGltZW5zaW9uPgogICAgICAgICA8ZXhpZjpQaXhlbFlEaW1lbnNpb24+MjA8L2V4aWY6UGl4ZWxZRGltZW5zaW9uPgogICAgICA8L3JkZjpEZXNjcmlwdGlvbj4KICAgPC9yZGY6UkRGPgo8L3g6eG1wbWV0YT4KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAKPD94cGFja2V0IGVuZD0idyI/Pu6JurQAAAAgY0hSTQAAeiUAAICDAAD5/wAAgOkAAHUwAADqYAAAOpgAABdvkl/FRgAABRFJREFUeNpE1OtvW/Udx/H3ufj4+Ph2nDh2vLgrTSPaFNqGtd0Gy9LRTVymNoNM6ihCaEwdQ5sYAo0HTOwBYg/Yk0pDiG3qmLSiPtjGJERbdZSQaUArykXt1la9hDRNY6dpYsexj30uPj7ntwcVyT/w0ucrfT5fSQgBdguAEBlZhDhaiVikF2j22lfPjP77+Kc/9ZyO9p37th7s2rLlbegveZ4g6jggS4AMAKkkkhAC366DJJADgaJlgA/unTx+4qmT/7oyKpxJfdYzUDIma7M6TsXoDH+3/8jgnrG/iOC2o8JrIiQJECjpvlt0Q7JoimWEkQHN1Sf+8MbE40+O7226M/rtCYX9+k2e0me55+48XXfn1f1PvvfwiVdfOSLFlKitSbh8hq9+DitZFRlZSaHK1aJ35uV3f3+4zr79/fy42CD9pwtULwdUpwLqu//ID4JzPHPoEQ7+00dc/vM/Eoary3oCPR5dBROeRTxaH7x+9MWpkd3nRsyBPL/InmP6cAN5jUlgtcELkXpMTj19kr3GGfLfuovv7T62Z/GjN67aM2c3XHz/nVUw6jmo7ruJI5eT2idz23lwu0XzbAP5eh3JjBJdCnBP3iSyrhu96VD562nG7m8z8cUm3vwwKCSkVgx5aBWsL1aK4cfvHwilGKg2KWuOxjxEAh+WXKT1Bto2E/lGC42QyrRDX5cHkkStKRPtUQ9sHB5btwLOXHrvh+1yeTiT0KATRRQKZId7aSKw7ukm2Fck8dIQxjNbkHsMctuytOw2CEEhZ0Dp7L1Ls6d+sgIaicxgw/Lp73FB7+bEaQN1V4rqnrUEZQvpfy3sYzfxp5fRnh+m69mtvHWoBsQZ2qzSmlrALU0VV8BwaW5Po6ZyZ9Gi+HWN19+M859XSgztKJA2ktgXaoQLHu65GsnyMudfvsKrh6Lkh0w299WplD38pUvDK6CstkyrIZNavMLe+wM6fgL/6Dzdf/scuS9Cu0chzKlkdxUoTFylcvA8rbbC2GiEZHUSq6GiJuUIgAoQM746Lm+4Nhrk+3jiGxYH+np4vTyIP3uB7uokcjqGc6GGNZCjnCnwdzkGKZMnvrlAJ1nEvEPCyKw5tgKCnBMNwdyUxZ2D0/z2V9t48fkRjlqboeEzalfpMmXeOpakiQFkeO7nOjsGJpmbBFybsGNtXQFVs729k8zjz/uUFi7yy+EoY+NxJo7bXJK38MCmLyjEKnSO9NGuOazZaPDrB65x89Q1bF9Hz2qoprYRuPUcvOYnj1ZP/+6wM9/Gq/hQmmH9Q0NE8zoEVYKqSnPBIb2uC9Z2Q6nC9NuXcZJZEv0JYr0G6YF9O7XM9z+QhBAAdFr/fWzp/IHXAtdJVz6cR40LencOEiw5+HYL2dDRu+JIWoTqqSk6gUp6+3p8l2p6w8gjcTM1Lmn33TrZd2ZwFp2yOx9z9HyYzu8aIKi3CKwGGBqKZqLFoL3cpFWqoa/tRi/m8ZZt3LIlYmuaKKkUsS9rI9pXUfjohdzXkr2RTAGvHhIGKmGg4C5aIELa1TrNyUUkJQKShHujQiQmk/92IasZ1s9Ch9Uta0qKaPeOhyw7/ZpdKrU0ZZlUrkNEstEkH8VbRjgOyY1ZUgMpZK2JmtaQMr3XO+pdv1GN23+kaIus1kb4SBHVblTjTzsX8y859cUHPX9251c29WwKLSmhm3KXGkti3eB6rMe01dzI2aWphXFnpnaib2culBQFEbgA/H8ALiI3EysggNoAAAAASUVORK5CYII=') no-repeat 0 0
+      background-size contain
+
+  .footer-bottom
+    text-align center
+    color #b5b5b5
+    img
+      margin-bottom 10px
+
+.footer-avatar-ac
+  position relative
+  background #fff
+  width 80px
+  height 80px
+  line-height 80px
+  text-align center
+  cursor pointer
+  img
+    vertical-align middle
+  .num
+    display none
+    position absolute
+    color #fff
+    background-color #ff4136
+    right 4px
+    top 12px
+    height 16px
+    line-height 16px
+    padding 0 4px
+    border-radius 2px
+    box-shadow 0 1px 3px rgba(0, 0, 0, 0.3);
+    font-size 12px
+
+//分栏
+.column-box
+  .column-left
+    width 880px
+    float left
+  .column-right
+    width 260px
+    float right
+
+//区块
+.area
+  $height = 40px
+  margin-bottom 36px
+  clear both
+  .area-header
+    margin-bottom 10px
+    height $height
+    overflow hidden
+
+  .area-more
+    margin 10px 0 10px 16px
+    color $colorRed1
+    &:hover
+      color #e61728
+    i
+      margin-left 2px
+      display inline-block
+      width 10px
+      height 16px
+      font-size 12px
+      &:before
+        vertical-align -1px
+    span
+      vertical-align -1px
+
+  .area-title
+    height $height
+    line-height $height
+    float left
+    font-size 12px
+    img
+      border-radius 50%
+      margin-right 16px
+      float none
+    b
+      font-size 18px
+      font-weight bold
+      color #112222
+      display inline-block
+      margin-right 16px
+
+    p
+      color $colorGray2
+      display inline-block
+
+  .area-recommend
+    height $height
+    width 800px
+    overflow hidden
+    text-align right
+    img
+      margin-right 14px
+    p
+      margin-right -24px
+
+    span
+      display inline-block
+      a
+        margin-right 30px
+        line-height $height
+        font-size 12px
+        color $colorGray
+        &:last-of-type
+          margin-right 0
+        &:hover
+          color $colorRed1
+      i
+        margin 0 10px
+        color #e5e5e5
+
+  .area-tab-nav
+    padding 8px 0
+    margin-right 54px
+    a
+      padding 0 10px
+      height 22px
+      line-height 22px
+      display inline-block
+      color $colorGray
+      border-radius 3px
+      border 1px solid transparent
+      background none
+      &.active
+        border-color #fae7e8
+        background rgba(253,76,91,0.1)
+        color #fd4c5b
+  .area-change-btn
+    border 1px solid #dedede
+    height 22px
+    line-height 22px
+    width 74px
+    text-align center
+    color #333
+    border-radius 3px
+    margin-top 8px
+    position relative
+    &:hover
+      background #eee
+      .point
+        display block
+    &.disable
+      color #bbb
+      cursor default
+      &:hover
+        background none
+    &.loading
+      i
+        animation rotateZ 1s linear 0s both infinite
+    span
+      width 74px
+      height 22px
+      display block
+      position relative
+      &:hover
+        cursor pointer
+    i
+      font-size 14px
+      position absolute
+      left 7px
+      top 4px
+      width 14px
+      height 14px
+      line-height 14px
+      overflow hidden
+      &:before
+        top 1px
+        position absolute
+        left 0
+    em
+      position absolute
+      left 26px
+      top 0
+    .point
+      display none
+      position absolute
+      line-height 14px
+      height 14px
+      background none
+      left 82px
+      top -1px
+      padding 4px 8px
+      color #bbb
+      border 1px solid #dedede
+      border-radius 3px
+      width 188px
+      background #f8f8f8
+      &:before,&:after
+        display block
+        position absolute
+        left -5px
+        top 5px
+        content ''
+        border-width 5px 5px 5px 0
+        border-style solid
+        border-color transparent #dedede transparent transparent
+        background none
+        z-index 1
+      &:after
+        z-index 2
+        left -4px
+        border-color transparent #f8f8f8 transparent transparent
+
+.firefox .area .area-change-btn i:before
+  top 0
+
+//栏目区块
+.area-channel
+  .area-main
+    height 293px
+    overflow hidden
+    &.all-area
+      height 428px
+  .block-video
+    height 140px
+  .area-recommend
+    width 440px
+  &.area-channel-big, &.area-channel-small
+    .block-video
+      height 140px
+  &.area-channel-small
+    overflow hidden
+    .area-main
+      height 130px
+    .area-recommend
+      width 800px
+
+//模块
+.module
+  .module-title
+    height 40px
+    line-height 36px
+    font-size 23px
+    b
+      font-size 18px
+      font-weight bold
+      color #333
+    img
+      margin-right 16px
+  .module-header
+    margin-bottom 10px
+  .module-con
+    li
+      height 28px
+      line-height 28px
+      overflow hidden
+      &.has-img
+        height 50px
+        margin-bottom 8px
+        .img-wp
+          margin-right 16px
+          img
+            border-radius 3px
+        b, p
+          line-height 18px
+          height 17px
+          overflow hidden
+        b
+          display block
+          a
+            margin-top -3px
+            display inline-block
+            vertical-align top
+        p
+          color $colorGray2
+          display block
+          a
+            color #999
+            &:hover
+              color $colorRed1
+          .icon
+            font-size 12px
+            &:first-of-type
+              margin-right 20px
+            strong
+              margin-left 5px
+          &:nth-child(3)
+            line-height 16px !important
+      a
+        color #333
+        &:hover
+          color $colorRed1
+        &:visited
+          color $colorGray2
+          &:hover
+            color $colorRed1
+
+  .module-footer
+    line-height 26px
+    text-align center
+    a.more
+      border-radius 3px
+      .icon
+        font-size 13px
+
+//大图视频推荐
+.module-video-big
+  $width = 340px
+  margin 0 20px 20px 0
+  position relative
+  width $width
+  height 280px
+  overflow hidden
+  border-radius 3px
+  a
+    vertical-align top
+    position relative
+  p
+    padding 5px 0
+    z-index 2
+    line-height 18px
+    color $colorGray
+  b, em
+    display block
+  em
+    color $colorGray2
+  time
+    position absolute
+    padding 0 5px
+    right 0
+    bottom 0
+    z-index 2
+    color #fff
+    display none
+  .mask-video
+    display block
+    border-radius 3px
+    overflow hidden
+    &:hover
+      .mask-video-icon
+        opacity 0
+      time
+        display block
+    i
+      background rgba(0,0,0,0.3)
+      border 1px solid #fff
+    .mask-video-icon
+      background none
+      opacity 1
+      i
+        top auto
+        left auto
+        bottom 16px
+        right 16px
+
+
+//图文块
+.block-box
+  width 160px
+  margin 0 20px 20px 0
+  position relative
+  overflow hidden
+  &.has-hover-bg:hover
+    padding 4px
+    margin -4px 16px -4px -4px
+    background #f5f5f5
+  &.is-recommend
+    i
+      width 36px
+      height 18px
+      line-height 18px
+      background rgba(251,91,104,0.9)
+      position absolute
+      left 0
+      bottom 0
+      text-align center
+      border-radius 0 5px 0 3px
+      color #fff
+      z-index 10
+  .block-img
+    display block
+    margin-bottom 5px
+    position relative
+    border-radius 3px
+    overflow hidden
+    // span
+  .block-title
+    line-height 18px
+    height 36px
+    font-size 12px
+    b
+      font-size 12px
+      display block
+
+    p
+      color $colorGray2
+      line-height 20px
+      height 20px
+  .block-top
+    position absolute
+    left 0
+    top 0
+    z-index 10
+  a:hover
+    time
+      display block
+
+  time
+    display none
+    font-size 12px
+    position absolute
+    right 0
+    bottom 0
+    line-height 18px
+    z-index 2
+    padding 0 5px
+    color #fff
+    font-weight normal
+
+//视频块
+.block-video
+  margin 0 20px 10px 0
+  height 130px
+  &:hover
+    .block-title
+      a
+        overflow hidden
+      p
+        bottom -18px
+        opacity 0
+  &.no-animate
+    &:hover
+      .block-title
+        p
+          bottom 0
+          opacity 1
+
+  .block-img
+    display block
+    height 90px
+    width 160px
+    border-radius 3px
+  .block-title
+    position relative
+    height 38px
+    overflow hidden
+    b
+      line-height 18px
+      height 36px
+      overflow hidden
+      display block
+    p
+      transition: bottom .2s ease, opacity .2s ease;
+      position absolute
+      bottom 0
+      left 0
+      width 100%
+      background #f8f8f8
+      span
+        font-size 12px
+      .up
+        max-width 90px
+    .icon
+      &:before
+        margin-right 5px
+      &:first-of-type
+        display inline-block
+        width 80px
+
+//图片块
+.pic-box
+  border-radius 3px
+  overflow hidden
+  img
+    border-radius 3px
+
+//排行榜
+.module-rank
+  .module-title
+    line-height 20px
+    height 20px
+    font-size 18px
+    padding 10px 0
+  .module-tab
+    padding 8px 0
+    a
+      padding 0 10px
+      height 22px
+      line-height 22px
+      display inline-block
+      color $colorGray
+      border-radius 3px
+      border 1px solid transparent
+      background none
+      &.active
+        border-color #fae7e8
+        background rgba(253,76,91,0.1)
+        color #fd4c5b
+  .module-con
+    li
+      padding 0 0 0 28px
+      position relative
+      &.has-img
+        padding-left 0
+        margin-bottom 20px
+        overflow visible
+        > span
+          width 16px
+          height 16px
+          line-height 16px
+          text-align center
+          left 0
+          top 0
+          font-size 12px
+          background rgba(251,91,104,0.9)
+          border-radius 3px 0 3px 0
+          i
+            color #fff
+        >p
+          &:nth-child(5)
+            line-height: 20px
+      > span
+        width 28px
+        height 30px
+        line-height 30px
+        overflow hidden
+        position absolute
+        left 0
+        top 0
+        i
+          position absolute
+          top 0
+          left 0
+          z-index 2
+          width 100%
+          text-align left
+          text-indent 4px
+          color $colorGray2
+          font-family Arial
+        &:before
+          position absolute
+          z-index 1
+          top 0
+          left 0
+          font-size 26px
+          color #ffc107
+
+      a
+        overflow hidden
+        &:hover
+          color $colorRed1
+  .module-footer
+    a.more
+      display block
+      background #eee
+      color $colorGray
+      &:hover
+        background #e4e4e4
+      .icon
+        &:before
+          vertical-align -1px
+          margin-left 5px
+
+//横图广告
+.area-ad
+  max-height 140px
+  overflow hidden
+  a
+    display block
+    width 570px
+    height 100px
+    border-radius 3px
+    overflow hidden
+    img
+      width 100%
+      height 100%
+      vertical-align top
+  &.ad-line
+    a
+      width 100%
+
+
+//弹幕
+.has-danmu
+  &:hover
+    .space-danmaku
+      background rgba(0, 0, 0, 0.7)
+
+//弹幕容器
+.space-danmaku
+  position absolute
+  //border-radius 3px
+  top 0
+  left 0
+  width 100%
+  height 100%
+  overflow hidden
+  letter-spacing 0.06em
+  background-color transparent
+  transition background-color 0.3s
+  z-index 1
+  border-radius 3px
+  span
+    position absolute
+    color #fff
+    font-size 12px
+    pointer-events none
+    white-space nowrap
+    text-shadow 1px 1px 2px rgba(#000, 80%)
+
+.init-space
+  background-color transparent !important
+
+.no-rgba
+  .thumb:hover
+    .space-danmaku
+      filter unquote('progid:DXImageTransform.Microsoft.gradient(startColorstr=#b2000000,endColorstr=#b2000000)')
+
+//工具栏
+.toolbar
+  width 50px
+  position fixed
+  left 50%
+  bottom 50px
+  margin-left 624px
+  z-index 1
+  height 116px
+  .tool-to-top,.tool-to-comm
+    position relative
+    margin 8px 0 0
+    width 50px
+    height 50px
+    background rgba(0, 0, 0, 0.8)
+    color #fff
+    font-size 36px
+    text-align center
+    line-height 50px
+    border-radius 3px
+    cursor pointer
+  .tool-to-top
+    display none
+  .tool-to-comm
+    display none
+    font-size 25px
+    line-height 42px
+    .pts
+      font-size 12px
+      display block
+      margin-top -22px
+
+
+//二次元日历锚点
+.calendar-anchor
+  position fixed
+  left 50%
+  margin-left 624px
+  top 160px
+  display none
+  z-index 1
+  .btn-close
+    height 20px
+    line-height 20px
+    text-align center
+    color $colorGray1
+    border 1px solid #ccc
+    border-radius 3px
+    display block
+    cursor pointer
+    background #fff
+
+//info 信息提示
+.info-box
+  position fixed
+  left 0
+  bottom 45px
+  font-size 12px
+  line-height 18px
+  z-index 10
+  p
+    position relative
+    z-index 11
+    display table
+    margin 0 0 8px 0
+    padding 0 8px 0 4px
+    width auto
+    height auto
+    border-left 4px solid darken($primary, 10%)
+    border-radius 1px
+    background-color $primary
+    box-shadow 0 1px 3px rgba(#000, 0.3)
+    color #fff
+    white-space pre-wrap
+    word-break break-all
+    font-size 12px
+    line-height 24px
+    left -100%
+    &.info
+      background $info
+      border-color darken($info, 10%)
+    &.error
+      background $error
+      border-color darken($error, 10%)
+    &.success
+      background $success
+      border-color darken($success, 10%)
+    &.warning
+      background $warning
+      border-color darken($warning, 10%)
+    i
+      font-size 15px
+      margin-right 5px
+      vertical-align middle
+
+.info-rise
+  z-index 10
+  position absolute
+  padding 0 4px
+  border-radius 1px
+  background-color #f69
+  box-shadow 0 0 1px rgba(#000, 0.1)
+  color #fff
+  text-align center
+  font-size 12px
+  line-height 1.5
+  cursor default
+//@media screen and (max-width: 1440px)
+//  .main
+//    .area-channel-slider
+//      .operate
+//        width 672px
+//        div
+//          margin-left 12px
+//          width 324px
+//          img
+//            margin-left -10px
+//          span
+//          //  margin-left -@width
+//            width @width - 24
+//  .crop-margin
+//    margin-right -20px
+//  .wp
+//    width 1192px
+//  .header
+//    .nav
+//
+//      width 1212px
+//      li
+//        margin-right 37px
+//  .block-video
+//    margin-right 12px
+//  .column-box
+//    .column-left
+//      width 848px
+//    .column-right
+//      width 332px
+//  .module-video-big
+//    margin-right 12px
+//    width 332px
+//  .area-ad
+//    a
+//      height 134px
+//      width 590px
+//
+//  .toolbar,.calendar-anchor
+//    margin-left 608px
+
+@media screen and (max-width: 1280px)
+  .main
+    .area-channel-slider
+      .operate
+        width 500px
+        div
+          margin-left 12px
+          width 238px
+          img
+            margin-left -40px
+          span
+            width @width - 24
+    //.main-bottom
+    //  .channel-rank
+    //    .channel-hot-search
+    //      .hotWord
+    //        padding 0
+    //    .module-rank
+    //      padding 6px 15px 20px
+    //    .fame-hall
+    //      padding 16px 15px 10px
+  .crop-margin
+    margin-right -20px
+  .wp
+    width 980px
+  .header
+    .nav
+      li
+        margin-right 22px
+  .column-box .column-left
+    width 700px
+  .footer
+    .footer-nav
+      div
+        padding 0 26px
+    .footer-link
+      div
+        padding-left 21px
+        width 202px
+
+  .search-box
+    margin-right 0
+
+  //全站通知
+  .notice
+    .header-notice
+      p
+        max-width: 850px
+  //二次元日历
+  .calendar-anchor, .toolbar
+    margin-left 520px
+
+  .area
+    .area-recommend
+      width 630px
+
+  .area-channel
+    .area-recommend
+      width 270px
+    &.area-channel-big
+      .area-recommend
+        width 270px
+    &.area-channel-small
+      .area-recommend
+        width 630px
+
+  .area-ad
+    a
+      height 84px
+      width 480px
+  .block-box
+    margin-right 20px
+//遮罩层
+#shade-layer
+  display none
+  position fixed
+  top 0
+  z-index 6666
+  background rgba(0,0,0,0.3)
+  width 100%
+  height 100%
+  cursor pointer
+//弹出层
+.pop
+  position absolute
+  width 400px
+  z-index 9999
+  margin 0
+  padding 0
+  border-radius 3px
+  background #ffffff
+  .win-hint-ensure
+    display block
+    width 100%
+    margin-top 20px
+
+//登陆
+#pop-login
+  border 1px solid #ffffff
+  .login-logo
+    width 180px
+    height 150px
+    margin 0 auto
+    margin-top -108px
+  .login-tool
+    height 24px
+    width auto
+    position absolute
+    right 0
+    top 0
+    .close
+      height @height
+      width @height
+      cursor pointer
+      &:hover
+        color $colorRed
+    .help
+      height @height
+      width @height
+  .form-login
+    width 340px
+    margin 0 auto
+    .form-info
+      border 1px solid #bfbfbf
+      box-sizing border-box
+      div
+        margin 0 8px
+        &.area1
+          border-bottom 1px solid #bfbfbf
+      input
+        width 322px
+        height 50px
+        border none
+        font-size 16px
+        font-family serif
+    .area-tool
+      width 340px
+      height 40px
+      line-height 40px
+      a
+        color #3886f2
+    #area-login-btn
+      width 100%
+      height 52px
+      line-height 52px
+      text-align center
+      background #67bdce
+      border none
+      font-family serif
+      cursor pointer
+      a
+        width @width
+        height @height
+        color #ffffff
+        font-size 20px
+  #area-login-tool
+    width 340px
+    height 20px
+    line-height 20px
+    margin 20px auto
+    img
+      margin-left 8px
+      margin-top -3px
+  top 300px
+#pop-confirm
+  height 100px
+  text-align center
+  button
+    color #ffffff
+    cursor pointer
+    margin 20px
+    width 80px
+    height 26px
+    border none
+    border-radius 3px
+    &#btn_cancle_ensure
+      background #3a9bd9
+      &:hover
+        background darken(@background,20%)
+    &#btn_ok_ensure
+      background #e74c3c
+      &:hover
+        background darken(@background,20%)
+#pop-follow
+  height 150px
+  padding 20px 30px
+  #win-btn-close
+    position absolute
+    right 20px
+    top 8px
+    cursor pointer
+    &:hover
+      color #e74c3c
+  .win-hint-ensure
+    margin 0
+    font-size large
+  .unit
+    margin-top 14px
+    border-bottom 1px dashed
+    margin-bottom 10px
+    height 80px
+    select
+      margin 0 10px
+      min-width 140px
+      outline none
+      height 24px
+      line-height @height
+      border-radius 3px
+      border 1px solid #bbbbbb
+      background #ffffff
+      box-shadow 0 1px 1px rgba(0,0,0,0.1)
+      cursor pointer
+
+    p
+      &.p1
+        width 60px
+        height 24px
+        line-height @height
+        text-align center
+        background #EEEEEE
+        border-radius 3px
+      &.hint
+        margin 8px 10px
+        color #999
+  .unit-tool
+    width 80px
+    #btn-do-follow
+      background #95ba12
+      border 1px solid @background
+      border-radius 3px
+      height 28px
+      color #ffffff
+      padding 0 8px
+      cursor pointer
+      &:hover
+        background darken(@background,20%)

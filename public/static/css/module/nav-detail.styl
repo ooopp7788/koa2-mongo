@@ -1,0 +1,80 @@
+.header
+  min-height: 47px
+  padding 0 !important
+  &.fixed
+    .nav
+      top 0 !important
+      background-color #fff
+  #nav
+    display block !important
+    top 0
+    li
+      margin-right 10px
+      .user-avatar
+        display none
+    .search-box
+      width 170px
+      position: relative
+      left: 0
+      top: 8px
+      #search-text
+        width 150px
+        border-radius 14px
+        border-right 1px solid #e5e5e5
+        padding-right 24px
+        height: 30px
+        font-size: 12px
+        text-indent: 6px
+      .search-result
+        width 240px
+        font-size: 12px
+        border-radius: 0 0 3px 3px
+        top: 38px !important
+        .hot-search
+          text-indent: 6px;
+        ul
+          height auto !important
+          li
+            clear both
+            width 220px
+            height 32px
+            margin-right: 0
+            i
+              font-style: normal
+              color: #fd4c5d
+      .search-hot-ul
+        height auto !important
+        li
+          margin 0
+          clear both
+          font-size 12px
+          height 32px
+          width 130px
+      .search-btn
+        margin-left -25px
+        color #909699
+        width 0
+        .icon-search
+          width 20px
+          &:before
+            color: inherit;
+
+    .header-guide
+      overflow visible
+      ul
+        height auto
+        padding 0 12px
+        li
+          a
+            height auto
+      .guide-item-con
+        left: -5px
+        a
+          color #333
+          padding-left: 0
+          &:hover
+            color #fd4c5d
+        #user-message-con
+          width 186px
+          li
+            float: none

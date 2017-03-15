@@ -1,0 +1,950 @@
+@import "../variable.styl"
+
+.main
+  background url("../../img/page/space/bg.png") no-repeat
+  overflow hidden
+  margin-bottom 0
+  padding-bottom 50px
+.area-pager
+  .pager
+    background transparent
+    border 1px solid #f0f0f0
+    &.pager-hinds
+      &:hover
+        background rgba(253,76,91,0.2)
+#ACFlashPlayer
+  border 1px solid #eee
+.header
+  padding 0 !important
+  #nav
+    display block !important
+    top 0 !important
+    background #fff !important
+    li
+      margin-right 10px
+      .user-avatar
+        display none
+    .header-guide
+      overflow visible
+      ul
+        height auto
+        padding 0 12px
+        li
+          a
+            height auto
+      .guide-item-con
+        left -5px
+        a
+          color #333
+          padding-left 0
+          &:hover
+            color #fd4c5b
+        #user-message-con
+          width 186px
+          li
+            float none
+    .search-box
+      width 170px
+      position relative
+      left 0
+      top 8px
+      #search-text
+        width 150px
+        border-radius 14px
+        border-right 1px solid #e5e5e5
+        padding-right 24px
+        height 30px
+        font-size 12px
+        text-indent 6px
+      .search-btn
+        margin-left -25px
+        color #909699
+        width 0
+        .icon-search
+          width 20px
+          &:before
+            color inherit
+      .search-result
+        width 240px
+        font-size 12px
+        border-radius 0 0 3px 3px
+        top 38px !important
+
+#player
+  position relative
+  margin-bottom 20px
+  .hints
+    position absolute
+    top 20px
+    color #fff
+    font-size 14px
+    .date
+      margin-left 16px
+    .date,.title
+      margin-right 10px
+    a
+      color #fff
+      &:hover
+        color #fd4c5b
+
+
+
+
+section
+  background #fff !important
+.contentup
+  margin-top 20px
+  border 1px solid #eee
+.contentView
+  clear both
+.nothing
+  width 312px
+  position absolute
+  top 100px
+  left 33%
+  text-align center
+  .img
+    width 120px
+    height 120px
+    background url("../../img/no-thing.png") no-repeat
+    background-size 100%
+    margin 0 auto
+  span
+    font-size 12px
+    color #999
+    margin-top 20px
+.spinner
+  margin 180px auto 0
+  width 150px
+  text-align center
+  padding-right 20px
+  div
+    width 12px
+    height 12px
+    background-color #e5e5e5
+    border-radius 100%
+    display inline-block
+    -webkit-animation bouncedelay 1.4s infinite ease-in-out
+    animation bouncedelay 1.4s infinite ease-in-out
+    -webkit-animation-fill-mode both
+    animation-fill-mode both
+  .bounce1
+    -webkit-animation-delay -0.32s
+    animation-delay -0.32s
+  .bounce2
+    -webkit-animation-delay -0.16s
+    animation-delay -0.16s
+  @-webkit-keyframes bouncedelay {
+    0%, 80%, 100% { -webkit-transform: scale(0.0) }
+    40% { -webkit-transform: scale(1.0) }
+  }
+
+  @keyframes bouncedelay {
+    0%, 80%, 100% {
+      transform: scale(0.0);
+      -webkit-transform: scale(0.0);
+    }
+    40% {
+      transform: scale(1.0);
+      -webkit-transform: scale(1.0);
+    }
+  }
+#emotion
+  width 150px
+  height 200px
+  border 1px solid transparent
+  padding 0 75px
+  position absolute
+  left 36%
+  top 86px
+  #list
+    width 240px
+    height 40px
+    background #d9edf6
+    line-height 40px
+    text-align center
+    font-size 15px
+    margin-top 5px
+    margin-left -50px
+.head-list
+  padding 0 20px
+  .tab
+    border-bottom 1px solid #eee
+    height 46px
+    span
+      padding 0 4px
+    a
+      height 44px
+      line-height 44px
+      padding 0 4px
+      margin-right 20px
+      font-size 14px
+      font-weight bold
+      &:hover
+        color #fd4c5b
+      &.active
+        color #fd4c5b
+        border-bottom 3px solid
+.sort
+  position relative
+  a
+    font-size 12px
+    margin-right 0
+    font-weight normal
+  &:hover
+    .icon
+      transform rotate(180deg)
+  .news
+    display none
+    width 64px
+    position absolute
+    left -20px
+    background #fff
+    z-index 1
+    top 18px
+    border-radius 4px
+    border 1px solid #eee
+    a
+      display block
+      font-size 12px
+      width 64px
+      height 30px
+      line-height 30px
+      text-align center
+      &:hover
+        background #f5f5f5
+        border-radius 4px
+      &.active
+        border-color transparent
+        color #fd4c5b!important
+.sort,.mesL
+  .icon,.horn
+    width 7px
+    height 4px
+    display inline-block
+    margin 2px 4px
+    background url("../../img/share_jiao.png")
+    -webkit-transition all .3s
+    -moz-transition all .3s
+    transition all .3s
+.table
+  margin 20px 0
+  .tab
+    border-radius 4px
+    height 24px
+    line-height @height
+    text-align center
+    padding 0 12px
+    display inline-block
+    color #333
+    margin-right 6px
+    border-radius 12px
+    &:hover
+      color #fd4c5b
+    &.active
+      color #fd4c5b !important
+      background rgba(253, 76, 90, 0.10)
+    span
+      padding 0 4px
+.contentlist,.flowlist,.flowedlist
+  padding 0 20px
+.contentlist
+  .contentView
+    position relative
+  //- 视频
+  .listVideo
+    margin-right -20px
+    .contentView
+      min-height 400px
+      overflow hidden
+    figure
+      width 208px
+      margin-right 20px
+      margin-bottom 20px
+      cursor pointer
+      position relative
+      img
+        border-radius 3px
+      .mask
+        opacity 0
+        height 118px
+        width 208px
+        position absolute
+        top 0
+        left 0
+        border-radius 3px
+        background rgba(253,76,90,0.6)
+        transition opacity 0.3s ease-in
+        border 2px solid rgba(253,76,90,1)
+        box-sizing border-box
+      .hints
+        display none
+        height 24px
+        line-height @height
+        width 72px
+        position absolute
+        top 47px
+        left 68px
+        border-radius 12px
+        background rgba(253,76,90,1)
+        color #fff
+        text-align center
+      .icon-play
+        opacity 0
+        height 40px
+        width @height
+        position absolute
+        top 0
+        background url("../../img/page/space/play.png")
+        background-size 100%
+        margin 40px 84px
+        transition opacity 0.3s ease-in
+      figcation
+        p
+          display block
+          width @width
+          overflow hidden
+          margin-top 8px
+          &.title
+            height 14px
+            line-height @height
+            font-size @height
+            color #333
+          &.crumbs,&.date
+            height 12px
+            line-height @height
+            font-size @height
+            color #999
+      &:hover
+        .mask,.icon-play
+          opacity 1
+        figcation
+          .title
+            color #fd4c5b
+      &.active
+        cursor auto
+        .mask,.hints
+          display block
+        .mask
+          opacity 0.6
+        figcation
+          .title
+            color #fd4c5b
+        &:hover
+          .icon-play
+            opacity 0
+
+  #listArticle
+    .contentView
+      min-height 400px
+      overflow hidden
+  #listHeji
+    .contentView
+      min-height 400px
+      overflow hidden
+  .listHeji
+    display none
+    margin-right -20px
+    figure
+      width 170px
+      margin-right 20px
+      margin-bottom 20px
+      .pic-box
+        display block
+        overflow hidden
+        width 170px
+        height 220px
+        border 1px solid #eee
+      img
+        border-radius 3px
+        transition all 0.2s ease-in
+      figcation
+        p,a
+          display block
+          width @width
+          overflow hidden
+          margin-top 8px
+          &.title
+            height 14px
+            line-height @height
+            font-size @height
+            color #333
+          &.crumbs,&.date
+            height 12px
+            line-height @height
+            font-size @height
+            color #999
+        a
+          &:hover
+            color #fd4c5b
+      &:hover
+        img
+          width 180px
+          height 230px
+          margin-left -5px
+          margin-top -5px
+        figcation
+          a
+            color #fd4c5b
+  .listArticle
+    display none
+    margin-right -20px
+    figure
+      width 544px
+      height 126px
+      border-bottom 1px solid #eee
+      padding-left 16px
+      .title
+        width @width
+        color #000
+        height 16px
+        font-size @height
+        line-height @height
+        overflow hidden
+        display block
+        margin-top 20px
+        font-weight bold
+        &:hover
+          color #fd4c5b
+      figcation
+        p
+          font-size 12px
+          margin-top 10px
+          &.crumbs
+            color #333
+            height 12px
+            line-height @height
+          &.desc
+            width 528px
+            color #999
+            height 36px
+            overflow hidden
+            line-height 18px
+      &.line
+        border-right 1px solid #eee
+        padding 0
+        width 560px
+        figcation
+          p
+            &.desc
+              width 544px
+#flowlist,#flowedlist
+  .contentView
+    min-height 360px
+    overflow hidden
+    position relative
+
+
+//- 关注、被关注列表
+.flowlist,.flowedlist
+  display none
+  figure
+    border-bottom  1px solid #eee
+    height 106px
+    width 100%
+    div
+      margin-top 21px
+    img
+      border-radius 32px
+      margin-right 20px
+    p,a
+      width 1036px
+      height 21px
+      line-height @height
+      overflow hidden
+      color #999
+      &.name
+        font-size 14px
+        color #333
+      .nums
+        margin 0 20px 0 6px
+        color #333
+//- 头部样式
+#anchorMes
+  background #fff
+  margin-top 120px
+  height 96px
+  position relative
+  border 1px solid #eee
+  .cover
+    width 132px
+    height 132px
+    box-sizing content-box
+    padding 2px
+    background rgba(255,255,255,0.8)
+    border-radius 50%
+    position absolute
+    top -62px
+    margin-left 18px
+    .img
+      width 120px
+      height 120px
+      border-radius 50%
+      background pink
+      margin 5px
+      border 1px solid #eee
+    .authen
+      width 32px
+      height 32px
+      //-background url("../../img/V.png") no-repeat
+      position absolute
+      bottom 6px
+      right 4px
+  .information
+    margin-left 156px
+    .mesL
+      -webkit-box-sizing content-box !important
+      -moz-box-sizing content-box !important
+      box-sizing content-box !important
+      position absolute
+      width 690px
+      padding 0 20px
+      z-index 2
+      background #fff
+      border-left 1px solid transparent
+      border-right 1px solid transparent
+      &.hover
+        border-color #eee
+        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      &:hover
+        .horn
+          webkit-transform -webkit-rotate(180deg)
+          -moz-transform -moz-rotate(180deg)
+          transform rotate(180deg)
+    .name
+      height 26px
+      line-height 26px
+      font-size 22px
+      color #333
+      font-weight 600
+      margin-top 10px
+      max-width 406px
+      .verified-ico
+        width: 22px;
+        height: 22px;
+      .verified-1
+        background: url(../../img/monkey2x.png) no-repeat 50% 50%
+        background-size: 22px 22px
+      .verified-2
+        background: url(../../img/verified-blue2x.png) no-repeat 50% 50%
+        background-size: 22px 22px
+      .verified-3
+        background: url(../../img/verified-yellow2x.png) no-repeat 50% 50%
+        background-size: 22px 22px
+    span
+      margin-top 23px
+      height 13px
+      line-height 13px
+      font-size 13px
+      color #888
+      margin-left 16px
+    .sub, .follow, .fans
+      color #fd4c5b
+      margin-left 6px
+    #report
+      cursor pointer
+      &:hover
+        color #fd4c5b
+    .i-share
+      height 20px
+      position relative
+      cursor pointer
+      .icon
+        width 7px
+        height 4px
+        display inline-block
+        margin 2px 4px
+        background url("../../img/share_jiao.png")
+        -webkit-transition all .3s
+        -moz-transition all .3s
+        transition all .3s
+      &:hover
+        .icon
+          webkit-transform -webkit-rotate(180deg)
+          -moz-transform -moz-rotate(180deg)
+          transform rotate(180deg)
+    //#bdshare
+    //  display block
+    .verified-info
+      color: #333
+    .tan
+      height 13px
+      line-height @height
+      padding-top: 5px;
+      i
+        margin 4px 0 0 10px
+
+    .info
+      font-size 13px
+      color #888
+      margin-top -2px
+      max-width 664px
+      line-height: 15px
+    .infoM
+      display inline-block
+      max-width 662px
+      line-height 22px
+      background #fff
+      position relative
+      font-size 13px
+      color #888
+      top: -19px;
+      word-wrap break-word/*支持IE，chrome，FF*/
+      word-break break-all /*支持IE，chrome，FF不支持*/
+    .mesR
+      a
+        display inline-block
+        width 72px
+        height 32px
+        line-height 32px
+        text-align center
+        background #fff
+        font-size 14px
+        border-radius 30px
+        margin 32px 20px 0 0
+      #fow
+        width 88px
+        background #fd4c5b
+        color #fff!important
+        &:hover
+          background #F13444
+        &.active
+          background #eee
+          color #999 !important
+          &:hover
+            color #fd4c5b !important
+      #sixin
+        border 1px solid #e5e5e5
+        color #888!important
+        &:hover
+          color #fd4c5b!important
+/**bdshare**/
+#bdshare
+  top 17px
+  left -80px
+  display none
+  position absolute
+  height 65px
+  width 212px
+  overflow hidden
+  border 1px solid #eee
+  z-index 1
+  background #fff
+  border-radius 4px
+  .jiathis_style_32x32
+    margin 18px 0 0 4px
+  a
+    display: inline-block;
+    width 32px
+    height 32px
+    margin-left 10px
+    border-radius 3px
+    span
+      background-size 32px !important
+      margin 0 !important
+    &.jiathis_button_tsina
+      span
+        background url("../../img/tsina.png") no-repeat
+      &.hover
+        span
+          background url("../../img/tsina-hover.png") no-repeat
+    &.jiathis_button_qzone
+      span
+        background url("../../img/qzone.png") no-repeat
+      &.hover
+        span
+          background url("../../img/qzone-hover.png") no-repeat
+    &.jiathis_button_tieba
+      span
+        background url("../../img/tieba.png") no-repeat
+      &.hover
+        span
+          background url("../../img/tieba-hover.png") no-repeat
+    &.jiathis_button_weixin
+      span
+        background url("../../img/weixin.png") no-repeat
+      &.hover
+        span
+          background url("../../img/weixin-hover.png") no-repeat
+#list-pager-video,#list-pager-article,#list-pager-collection,#list-pager-flow,#list-pager-flowed
+  .area-pager
+    text-align center
+    margin 20px 0 40px 0
+    .pager
+      float none
+      min-width 18px
+      padding 0 5px
+    .hint
+      float none
+
+#changeBg
+  width 58px
+  height 61px
+  background url("../../img/page/space/changeBgNormal.png") no-repeat
+  position absolute
+  top 0
+  right 0
+  cursor pointer
+  &:hover
+    width 70px
+    height 67px
+    background url("../../img/page/space/changeBgHover.png") no-repeat
+#modal
+  width 100%
+  height 100%
+  position absolute
+  top 0
+  left 0
+  z-index 100
+  .fade
+    width 100%
+    height 100%
+    background #000000
+    opacity 0.5
+  .body
+    position fixed
+    top 20%
+    left 30%
+    width 620px
+    background #fff
+    z-index 200
+    border-radius 3px
+    padding 20px
+    box-sizing border-box
+    .button
+      width 110px
+      height 36px
+      border 1px solid transparent
+      padding  6px 12px
+      border-radius 4px
+      cursor pointer
+    .errorTip
+      border 1px solid rgba(253,76,90,0.20)
+      border-radius 3px
+      width 100%
+      text-align center
+      height 32px
+      line-height 32px
+      background-color rgba(253,76,90,0.10)
+      color #FD4C5B
+      margin-bottom 20px
+    .cover
+      width 320px
+      height 244px
+      border 1px solid #eeeeee
+      border-radius 3px
+      padding 20px
+      float left
+      box-sizing border-box
+      .preview
+        height 158px
+        overflow hidden
+        position relative
+        img
+          width 100%
+        .loading
+          position absolute
+          top 0
+          left 0
+          width 100%
+          height 100%
+          opacity 0.4
+          background url("../../img/page/space/loading.png") no-repeat center
+          background-color #000000
+        .error
+          position absolute
+          top 0
+          left 0
+          width 100%
+          height 100%
+          opacity 0.4
+          background url("../../img/page/space/imgFail.png") no-repeat center
+          background-color #000000
+      .action
+        .buttonUpload
+          width 82px
+          text-align right
+          display inline-block
+          margin-top 20px
+          background url("../../img/page/space/upload.png") no-repeat
+          background-position-y center
+          float left
+          color #FD4C5B
+        .buttonRefresh
+          width 106px
+          text-align right
+          display inline-block
+          margin-top 20px
+          background url("../../img/page/space/refresh.png") no-repeat
+          background-position-y center
+          float right
+          color #666666
+    .coverTip
+      float right
+      width 240px
+      .text
+        height 208px
+        p
+          color #999999
+          font-size 12px
+          height 24px
+          &:first-child
+            font-size 14px
+            height 30px
+      .buttonContainer
+        height 36px
+        button
+          width 110px
+        .buttonCancel
+          margin-right 20px
+          background-color #fff
+          color #666666
+          border-color #E5E5E5
+          font-size 14px
+          &:hover
+            background-color #F5F5F5
+        .buttonCoverConfirm
+          background-color #FD4C5B
+          border-color #FD4C5B
+          font-size 14px
+          color #ffffff
+          &:hover
+            background-color  #F13444
+    .title
+      font-size 16px
+      margin-bottom 20px
+      height @font-size
+      line-height @font-size
+
+
+.verified-ico
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  position: relative;
+  top: 4px;
+.verified-1
+  background: url(../../img/monkey.png) no-repeat 50% 50%
+  background-size: 18px 18px
+.verified-2
+  background: url(../../img/verified-blue.png) no-repeat 50% 50%
+  background-size: 18px 18px
+.verified-3
+  background: url(../../img/verified-yellow.png) no-repeat 50% 50%
+  background-size: 18px 18px
+@media screen and (max-width: 1280px)
+
+  //-导航
+  .header
+    #nav
+      li
+        margin-right 2px
+
+
+
+
+  //-布局
+  .contentlist
+    .listVideo
+      .contentView
+        min-height 400px
+      figure
+        width 172px
+        img,.mask
+          width @width
+          height 98px
+        .icon-play
+          margin 27px 64px
+        figcation
+          .crumbs,p
+            width @width
+        .hints
+          top 36px
+          left 47px
+
+    .listArticle
+      figure
+        width 460px
+        figcation
+          p.desc
+            width 460px
+        &.line
+          width 444px
+          figcation
+            p.desc
+              width 428px
+        .title
+          width 444px
+    .listHeji
+      figure
+        width 140px
+        .pic-box
+          width @width
+          height 182px
+          overflow hidden
+        img
+          width @width
+          height 182px
+        figcation
+          a,p
+            width @width
+        &:hover
+          img
+            width 150px
+            height 192px
+            margin-left -5px
+            margin-top -5px
+  .flowlist,.flowedlist
+    figure
+      p,a
+        width 850px
+
+  #anchorMes
+    height: 120px
+    .information
+      .mesL
+        width 503px
+        .name
+          width 504px
+          max-width 504px
+        .tan
+          padding-top: 18px
+          .info
+            max-width 486px
+            margin-top -10px
+          i
+            margin -6px 0 0 10px
+        .infoM
+          max-width 484px
+          top -27px
+        .ac
+          width 434px
+        .tougao
+          margin-left 0
+        span
+          margin-top 7px
+  #player-box
+    width 940px
+  #manageAdd
+    width 172px
+  .conList,.conListTA
+    margin-right -24px
+    .video
+      width 172px
+      .imgpop
+        img,.manageButtons
+          width 172px
+          height 98px
+        .manageButtons
+          top -38px
+          .listButton
+            padding 40px 0 44px
+      .coverPlay
+        width 168px
+        height 94px
+        .img
+          margin 26px auto
+      margin 0 20px 20px 0
+  .conListTA
+    .article
+      width 449px

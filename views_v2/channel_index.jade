@@ -1,0 +1,21 @@
+extends layout/parent
+block head
+    script.
+        $Config.action={
+            //sectionModule: "http://webapi.acfun.cn/modules?"
+           "sectionModule": "http://webapi.acfun.cn/modules?blockId=89&page=1&size=10&order=1&typeIds=1,3&isForce=true&channelIds=151&sort=latestDanmu"
+        }
+block style
+    link(rel="stylesheet", href="#{config.path}/style/page/channel.css")
+block content
+    nav#channel-nav.nav
+         include include/channel_nav
+    |!{html.top}
+    section.clearfix.wp.main-bottom.column-box
+        .fl.channel-operate.column-left
+            | !{html.left}
+        .fr.channel-rank.column-right
+            | !{html.right}
+block scripts
+    script(src="#{config.path}/js/project/#{config.sv['channel_index.js']}")
+

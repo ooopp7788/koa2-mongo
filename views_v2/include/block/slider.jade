@@ -1,0 +1,33 @@
+if topData
+    section.clearfix.wp.area.area-slider
+        .slider-wrap.fl
+            .slider-wrap-1
+                #J_slider.fl.slider-big
+                    ul.slider-con
+                        for sliderBigItem, index in topData[0].webContents
+                            li.slider-item
+                                a(href="#{sliderBigItem.link}",target="_blank")
+                                    if index === 0
+                                        img(src="#{sliderBigItem.image}?imageView2/1/w/508/h/260/q/100")
+                                    else
+                                        img(data-src="#{sliderBigItem.image}?imageView2/1/w/508/h/260/q/100")
+                                    span.mask-gradient.slider-title
+                                        b.text-overflow !{sliderBigItem.title}
+        
+        //- 轮播小图
+        .fr.slider-right-x6
+            ul.slider-small
+                for item in topData[1].webContents
+                    li
+                        a(href="#{item.link}",target="_blank")
+                            img(src="#{item.image}?imageView2/1/w/432/h/240",width="216",height="120")
+                            .mask-gradient.mask
+                                b !{item.title}
+                                p.text-overflow
+                                    span UP: #{item.userName}
+                                    span.clearfix
+                                        i.icon.icon-view-player #{item.viewsFormat}
+                                        i.icon.icon-danmu #{item.danmakuSize}
+
+
+            

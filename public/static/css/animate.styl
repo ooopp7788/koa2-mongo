@@ -1,0 +1,105 @@
+@import "base.styl"
+
+
+@keyframes rotateZ
+  0%
+    transform rotateZ(0)
+  100%
+    transform rotateZ(360deg)
+@keyframes qiuqian
+  0%
+    transform scale(1)
+  10%,20%
+    transform scale(0.9) rotate(-3deg)
+  30%,50%,70%,90%
+    transform scale(1.1) rotate(3deg)
+  40%,60%,80%
+    transform scale(1.1) rotate(-3deg)
+  100%
+    transform scale(1) rotate(0)
+@keyframes touxiang
+  0%
+    transform translateX(0) rotate(0deg)
+  90%
+    transform translateX(40px) translateY(-6px) rotate(40deg)
+  100%
+    transform translateX(0) rotate(0deg)
+
+//-toujiaoArr = 1 2 3 4 5
+//-for v,i in toujiaoArr
+@keyframes toujiao
+  0%
+    top 0
+    transform scale(1.2)
+  10%
+    top -30px
+  80%
+    top 80px
+  90%
+    filter "alpha(opacity=100)"
+    -moz-opacity 1
+    opacity 1
+  95%
+    filter "alpha(opacity=0)"
+    -moz-opacity 0
+    opacity 0
+  100%
+    filter "alpha(opacity=0)"
+    -moz-opacity 0
+    opacity 0
+    transform scale(1.2)
+    left 480px
+    top 80px
+@keyframes toujiao_narrow
+  0%
+    top 0
+    transform scale(1.2)
+  10%
+    top -30px
+  80%
+    top 80px
+  90%
+    filter "alpha(opacity=100)"
+    -moz-opacity 1
+    opacity 1
+  95%
+    filter "alpha(opacity=0)"
+    -moz-opacity 0
+    opacity 0
+  100%
+    filter "alpha(opacity=0)"
+    -moz-opacity 0
+    opacity 0
+    transform scale(1.2)
+    left 300px
+    top 80px
+@keyframes pulse
+  0%
+    transform scale(1)
+  50%
+    transform scale(1.2)
+  100%
+    transform scale(1)
+@keyframes pulse0
+  0%
+    transform translateY(-50px) translateX(40px) scale(0)
+  50%
+    transform translateY(0) translateX(0) scale(1.1)
+  100%
+    transform translateY(0) translateX(0) scale(1)
+@keyframes unpulse0
+  0%
+    transform translateY(0) translateX(0) scale(1)
+  50%
+    transform translateY(0) translateX(0) scale(1.1)
+  100%
+    transform translateY(-50px) translateX(40px) scale(0)
+@keyframes fadeOutUp
+  0%
+    opacity 1
+    transform translateY(0)
+  50%
+    opacity 1
+  100%
+    opacity 0
+    transform translateY(-50px)

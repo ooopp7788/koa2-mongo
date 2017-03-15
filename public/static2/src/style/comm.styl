@@ -1,0 +1,1580 @@
+//path
+cdn = 'http://cdn.aixifan.com'
+path = cdn + '/dotnet/20130418'
+
+//color
+color-primary = #3a9bd9
+color-success = #95ba12
+color-info = #055f95
+color-warning = #ff9101
+color-danger = #e74c3c
+color-debug = #9b59b6
+//color
+navy = #001f3f
+blue = #0074d9
+aqua = #7fdbff
+teal = #39cccc
+olive = #3d9970
+green = #2ecc40
+lime = #01ff70
+yellow = #ffdc00
+orange = #ff851b
+red = #ff4136
+fuchsia = #f012be
+purple = #b10dc9
+maroon = #85144b
+white = #ffffff
+silver = #dddddd
+gray = #aaaaaa
+black = #111111
+
+color-main = #ffa5c7
+color-side = #67bdcd
+
+//no select
+.no-select
+  -webkit-user-select none
+  -moz-user-select none
+  -ms-user-select none
+  -o-user-select none
+  user-select none
+  cursor default
+
+.inline-block
+  display inline-block
+  _display inline
+
+//transtion
+trans(delay = 0.2s, time = 0.2s, type = all)
+  transition time delay type ease
+
+.hidden
+  display: none !important
+//block
+.block
+  position relative
+  overflow visible
+  margin 0 auto 16px
+  padding 0
+  width 100%
+  border 1px solid #fff
+  background-color #fff
+  box-shadow 0 1px 2px rgba(#000, 0.2)
+  \*zoom 1
+
+  .mainer
+    padding 16px
+    text-align left
+
+strong,b
+  font-weight bold
+i,em
+  font-style italic
+//btn
+#area-comment
+  border: none
+  box-shadow: none
+  input
+    margin: 4px 2px 0;
+    padding: 0 4px;
+    width: 128px;
+    height: 22px;
+    outline: none;
+    border: 1px solid #bbb;
+    border-radius: 1px;
+    background: #fff;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    color: #666;
+    font-size: 12px;
+    line-height: normal;
+  .btn
+    -webkit-box-sizing border-box
+    -moz-box-sizing border-box
+    box-sizing border-box
+    @extend .no-select
+    @extend .inline-block
+    position relative
+    float left
+    margin 2px 2px 0
+    padding 0 8px
+    width auto
+    height 28px
+    outline none
+    outline 0
+    border 1px solid #ccc
+    border-radius 1px
+    background-color #fff
+    background-repeat repeat-x
+    box-shadow 0 1px 1px rgba(#000, 0.1)
+    color #333
+    vertical-align middle
+    text-align center
+    font-size 14px
+    line-height 26px
+    cursor pointer
+    \*zoom 1
+
+    &:visited
+      color #333
+
+    &.active, &:active
+      border-color #999
+      background-color #ccc
+      color #333
+      &:hover
+        border-color #aaa
+        background-color #ddd
+
+    &:hover
+      border-color #bbb
+      background-color #eee
+      color #333
+
+    &:focus
+      outline none
+
+    &:first-of-type
+      border-radius 1px
+      margin-left 0
+
+    &:last-of-type
+      border-radius 1px
+      margin-right 0
+
+  a.btn
+    white-space normal
+
+  .active.btn, .btn-active, .btn:active
+    outline 0
+    box-shadow inset 0 1px 2px rgba(#000, 0.2)
+
+  .mini.btn, .btn-mini
+    height 24px
+    line-height 20px
+    font-size 12px
+
+  //type
+  arr = (color-primary color-success color-info color-warning color-danger color-danger color-debug)
+  for type, i in primary success info warning danger error debug
+    .{type}.btn
+      color = arr[i]
+      color #fff
+      border 1px solid color
+      background-color color
+
+      &.active, &:active
+        border-color darken(color, 20%)
+        background-color darken(color, 10%)
+        &:hover
+          border-color darken(color, 15%)
+          background-color darken(color, 5%)
+
+      &:hover
+        border-color lighten(color, 10%)
+        background-color lighten(color, 10%)
+
+  .disabled.btn
+    color = #666
+    color #fff
+    border 1px solid color
+    background-color color
+    cursor not-allowed
+
+    &.active, &:active
+      border-color darken(color, 20%)
+      background-color darken(color, 10%)
+      &:hover
+        border-color darken(color, 15%)
+        background-color darken(color, 5%)
+
+    &:hover
+      border-color lighten(color, 10%)
+      background-color lighten(color, 10%)
+
+  //group
+  .group
+    .btn
+      margin 2px 0 0 -1px
+      border-radius 0
+
+      &:first-of-type
+        margin-left 2px
+        border-radius 1px 0 0 1px
+
+      &:last-of-type
+        margin-right 2px
+        border-radius 0 1px 1px 0
+
+      &.active, &:active
+        z-index 1
+
+
+  .banner
+    @extend .no-select
+    position relative
+    width auto
+    height 46px
+    border-bottom 1px solid #eee
+    //background-color #fff
+    color #666
+    text-align left
+    font-size 14px
+    line-height 34px
+    \*zoom 1
+    margin 0
+    padding 10px 0 0
+
+    &.mini
+      height 28px
+      line-height 26px
+
+      .tab
+        height 26px
+        line-height 26px
+
+    .tab
+      @extend .inline-block
+      trans(0s)
+      position relative
+      float left
+      overflow hidden
+      margin 0
+      padding 0 16px
+      width auto
+      height 35px
+      border none
+      border-right 1px solid #eee
+      color #333
+      text-align center
+      font-size 14px
+      line-height 35px
+      cursor pointer
+      \*zoom 1
+
+      &:hover
+        border-color #eee
+        //background-color #fafafa
+        color #333
+
+      &.active
+        border-color #333
+        background-color #333
+        box-shadow 0 1px 2px rgba(#000, 0.2) inset
+        color #fff
+
+      &.right, &.more
+        border none
+        float right
+
+      &.fixed
+        float left !important
+        overflow visible
+        padding 0 8px
+        border none
+        font-weight normal
+        font-size 18px
+        font-family Michroma, 'Segoe UI Light', 'Segoe UI', 'Segoe UI WP', 'Microsoft Jhenghei', '微软雅黑', sans-serif, Times
+        cursor default
+
+        &:hover
+          background-color transparent
+          box-shadow none
+          color #333
+
+        &:before
+          background-color color-info
+          content ''
+          display inline-block
+          height 16px
+          margin-right 4px
+          width 2px
+
+        .hint
+          margin 0 0 0 4px
+          color #ccc
+          font-size 10px
+          _display none
+
+      &.tool
+        position absolute
+        top 0
+        right 0
+        margin-right 8px
+        padding 0
+        border none !important
+        background-color transparent
+        cursor default
+
+        &:hover
+          background none
+
+        .btn
+          position relative
+          top 3px
+          min-width 48px
+          width auto
+          height 28px
+          line-height 26px
+          \*width 32px
+
+
+  .divider
+    height 1px
+    border-top 1px dashed #eee
+    margin 8px auto
+
+  //pager
+  .area-pager-old
+    @extend .no-select
+    overflow hidden
+    margin 4px auto
+    padding 4px 0
+    width 100%
+    height auto
+
+    .hint
+      @extend .inline-block
+      float left
+      margin 0 0 0 8px
+      height 32px
+      color #999
+      text-align left
+      font-size 14px
+      line-height 32px
+      width: auto
+      border: none
+
+    li
+      @extend .inline-block
+
+    .ipt-pager-old
+      @extend .inline-block
+      margin 0 4px
+      min-width 0
+      width 38px
+      text-align right
+
+    .btn-pager-old
+      float none
+      margin 0 0 0 4px !important
+      min-width 32px
+
+  .pager-old
+    color = color-primary
+    @extend .inline-block
+    float left
+    margin 0 2px 0 0
+    padding 0 4px
+    min-width 32px
+    width auto
+    height 32px
+    border none
+    border-radius 1px
+    background-color color
+    box-shadow 0 1px 1px rgba(#000, 0.1)
+    color #fff
+    text-align center
+    text-shadow 0 1px 1px rgba(#000, 0.1)
+    font-weight bold
+    font-size 12px
+    line-height 32px
+    cursor pointer
+
+    &:visited
+      color #fff
+
+    &:hover
+      background-color color + 10%
+      color #fff
+
+    &:active
+      background-color color - 10%
+      box-shadow inset 0 1px 2px rgba(#000, 0.2)
+      color #fff
+
+    &.active
+      background-color #eee
+      box-shadow inset 0 1px 2px rgba(#000, 0.2)
+      color #333
+      cursor default
+
+    .icon
+      margin 0
+
+  .banner
+    .more
+      border none
+      margin -10px 0
+      padding 0
+      cursor default
+
+      &:hover
+        background transparent
+      .btn
+        margin-top 0px
+
+      button
+        color = #fafafa
+        background-color #fff
+        color #333
+        border none
+        margin 0
+        height 35px
+        line-height 35px
+        &.active, &:active
+          border-color darken(color, 20%)
+          background-color darken(color, 10%)
+          &:hover
+            border-color darken(color, 15%)
+            background-color darken(color, 5%)
+
+        &:hover
+          border-color #fff
+          background-color #fff
+
+#area-editor
+  position relative
+  width 100%
+  margin-left 0px
+  padding-bottom 10px
+#editor
+  overflow-y auto
+  height 180px
+  img
+    vertical-align baseline
+#area-comment
+  #btn-showComm
+    width 256px
+    height 64px
+    line-height 64px
+    font-size 24px
+    font-weight bold
+    float none
+    margin 8px auto
+    display none
+
+.btn-load
+  height 224px
+  line-height 224px
+  text-align center
+  cursor wait
+  img
+    width 80px
+    height 80px
+    margin 72px auto
+    background-color transparent
+
+#area-comment
+  .item-comment-divider
+    position relative
+    width 100%
+    height 24px
+    padding 0
+    margin 8px auto
+    \*zoom 1
+    //background-color #f5f8fd
+  .item-comment
+    position relative
+    width 100%
+    height auto
+    //padding 2px 2px 30px
+    margin 4px auto
+    border-bottom 1px #eee solid
+    color #333
+    \*zoom 1
+    text-align left
+    .item-down-hidden
+      display none
+      color #999
+      cursor pointer
+      &:hover
+        color #666
+    .content-comment
+      .name
+        color #369
+        font-size 13px
+        line-height normal
+    .name
+      color #aaa
+      font-size 12px
+      //font-weight bold
+    .nameRed
+      color #ee003e
+    .nameOrange
+      color #ff9101
+    .namePurple
+      color #9b59b6
+    .date
+      color #999
+    .break-floor
+      position absolute
+      height 24px
+      line-height 22px
+      right 190px
+      top 0px
+
+  .item-comment-quote
+    position relative
+    width auto
+    height auto
+    padding 2px
+    margin 2px
+    border 1px solid #ddd
+    border-top 1px solid #ddd
+    border-bottom 1px solid #ddd
+    text-align left
+    background-color #ffe
+    .content-comment
+      font-size 13px
+      //font-family 'Helvetica Neue', Helvetica, Arial, sans-serif
+      display block
+      width auto
+      border none
+      color #333
+      margin 6px 10px 0 6px
+      padding 0 0 2px
+      white-space pre-wrap
+      word-wrap break-word
+      &.textCenter
+        text-align center
+    .icon-talk-left
+      display none
+
+  .item-quote-hidden
+    display block
+    position relative
+    background-color #f0f0f0
+    color #999
+    width 99%
+    \*width 98%
+    height auto
+    font-size 13px
+    text-align left
+    border 1px dashed #ccc
+    margin 4px auto
+    padding 4px 1%
+    cursor pointer
+    box-sizing border-box
+
+  .item-comment-first
+    .floor-comment
+      display none
+  .thumb:hover img
+    box-shadow none!important
+  .area-comment-left
+    width 60px
+    height 60px
+    float left
+    left 0
+    bottom 0
+    margin-top 5px
+    position relative
+    .thumb
+      position relative
+      border none
+      background none
+      margin 0
+      padding 0
+      border-radius 0
+      box-shadow none
+      display: block
+    .avatar
+      width 55px
+      height 55px
+      margin 0
+      padding 0
+      border 1px solid #fff
+      border-radius 0
+      box-shadow 0 0 0 rgba(0,0,0,0)
+      &:hover
+        box-shadow: 0 1px 2px rgba(0,0,0,0.2)!important
+    .avatar-bg
+      position absolute
+      top -2px
+      left -9px
+      background-color transparent
+      border none
+    .avatar-bg-a
+      position absolute
+      top -12px
+      left -12px
+      background-color transparent
+      border none
+    .avatar-bg-b
+      position absolute
+      top -13px
+      left -2px
+      background-color transparent
+      border none
+    .avatar-bg-c
+      position absolute
+      top -12px
+      left -19px
+      background-color transparent
+      border none
+    .avatar-bg-d
+      position absolute
+      top -12px
+      left 0px
+      background-color transparent
+      border none
+    .avatar-bg-sp2017
+      position absolute
+      top -12px
+      left -16px
+      background-color transparent
+      border none
+    .avatar-bg-cw2017
+      position absolute
+      top -18px
+      left -13px
+      background-color transparent
+      border none
+  .area-comment-right
+    margin 5px 0 0px 65px
+    width auto
+    height auto
+    position relative
+    text-align left
+    .content-comment
+      font-size 13px
+      display block
+      width auto
+      margin 0 6px 0 6px
+      padding 5px 0
+      //font-family 'Helvetica Neue', Helvetica, Arial, sans-serif
+      white-space pre-wrap
+      word-wrap break-word
+    .icon-talk-left
+      display none
+      position absolute
+      left -7px
+      top 32px
+      width 8px
+      height 15px
+      background-position -32px -80px
+
+  .img-hidden .area-comment-left,.avatar-hidden .area-comment-left
+    display none
+
+  .img-hidden .area-comment-right,.avatar-hidden .area-comment-right
+    margin-left 0
+
+  .content-comment
+    line-height 1.6
+    embed
+      display none
+    a
+      color #369
+    img
+      vertical-align baseline
+    .btn
+      float: none;
+      border-radius: 2px;
+      margin: 0 4px;
+      min-width: 32px;
+      width: auto;
+      height: 24px;
+      line-height: 20px;
+      color: #333;
+
+.item-comment-quote-simple
+  border 1px solid #ddd
+  border-bottom 1px solid #ddd
+  border-top none !important
+  margin 4px 2px 2px 2px
+  padding 4px 0 0 0
+  .area-simple-inner
+    border 1px solid #ccc
+    border-top none
+    margin 2px
+
+.area-simple-inner
+  .area-tool-comment
+    display none
+    \*display inline
+  &:hover
+    .area-tool-comment
+      display inline
+
+.item-comment-quote-hide
+  border none
+  margin 0
+  padding 0
+  .area-comment-quote-simple-inner
+    border 1px solid #ccc
+    border-top 0
+    margin 2px
+    padding 10px
+
+.comment-hide
+  color #999
+
+.item-comment-closed
+  margin 0
+  padding 2px
+  .area-comment-left
+    display none
+  .area-comment-right
+    margin 0
+  .content-comment
+    display none
+  .author-comment
+    display none
+  .item-down-hidden
+    background-color #fefefe
+    display block
+    padding 4px 0 4px 6px
+
+.item-comment-closed-quote
+  > .content-comment
+    display none
+  > .author-comment
+    display none
+  > .item-down-hidden
+    display block
+    padding 4px 0 4px 8px
+
+.index-comment
+  font-size 12px
+  color #aaa
+  cursor default
+  &.left_4
+    margin-left 4px
+
+.floor-comment
+  font-size 12px
+  position absolute
+  float right
+  right 8px
+  bottom 0
+  text-align right
+  \*zoom 1
+  cursor default
+
+
+background-color transparent
+.area-comment-page
+  text-align left
+  margin 10px 0
+  height 32px
+
+.info-comment
+  padding 4px
+  margin 8px 0
+  font-size 13px
+  color #fff
+  background-color #08c
+  text-align left
+  display block
+  border-radius 2px
+
+.author-comment
+  color #aaa
+  position relative
+  display block
+  width auto
+  margin 0 0 2px
+  padding 0 0 0 8px
+  \*zoom 1
+  font-size 13px
+  height 20px
+  line-height 20px
+  &.top
+    margin-top 8px
+
+.last
+  &.author-comment
+    //background-color #f5f8fd
+    height 24px
+    line-height 24px
+    .area-tool-comment
+      display inline-block
+      \*display inline
+
+.area-tool-comment
+  margin-left 8px
+  display none
+  \*display inline
+  a
+    display inline-block
+    \*display inline
+    margin 0 2px
+    padding 0
+    font-size 12px
+    color #789
+    //font-family "Microsoft YaHei","微软雅黑",tahoma,arial,simsun,"宋体"
+    &:hover
+      color #c33
+      .count
+        color #c33
+  .count
+    font-style normal
+    color #999
+
+.content-comment:hover~.author-comment>.area-tool-comment,.author-comment:hover .area-tool-comment
+  display inline-block
+  \*display inline
+
+
+#block-tool-editor
+  height auto
+  border 1px solid #ddd
+  border-top 1px dashed #ddd
+  box-shadow 0 1px 1px rgba(0,0,0,0.1)
+  background-color #fff
+  margin -2px 0 0
+  position relative
+  z-index 1
+  padding 8px
+
+#item-editor-shadow
+  height 240px
+  width 100%
+  line-height 240px
+  text-align center
+  cursor pointer
+  font-size 23px
+  color #999
+  border 2px dashed #ddd
+  border-radius 2px
+  //font-family Michroma,'Segoe UI Light','Segoe UI','Segoe UI WP','Microsoft Jhenghei','微软雅黑',sans-serif,Times
+  margin 16px 0 8px
+
+#item-editor-shadow-top
+  height auto
+  width 100%
+  background-color transparent
+
+#area-comment
+  .block
+    box-shadow: none
+    border: none
+    background: none
+
+
+#area-replyer
+  width 670px
+  margin 24px 0
+  padding 0
+  text-align center
+  \*zoom 1
+  \*height 320px
+
+#area-quoter
+  width auto
+  height auto
+  position absolute
+  margin 16px 0
+  padding 0
+  text-align center
+  \*zoom 1
+  display none
+
+#area-quoter-space
+  width auto
+  height 280px
+
+#btn-quote,#btn-apply
+  display block
+  float none
+  margin 8px 0
+  width 96px
+
+#btn-download
+  display none
+
+.emotion
+  max-height 80px
+  max-width 80px
+  _width 80px
+  _height 80px
+
+#area-comment-inner
+  padding 8px
+//umeditor
+#area-editor-inner .edui-toolbar .edui-btn-toolbar
+  padding 1px 5px
+
+#area-comment
+  .time_
+    float right
+    margin-right 10px
+    color #999
+  .tool_
+    float right
+    margin-right 10px
+  ._icon-comment
+    background-image url(path+"/project/homura/style/nimage/_icon-comment.png")
+    width 14px
+    height 13px
+    margin-top 12px
+    display block
+    float left
+  ._icon-refresh
+    background-image url(path+"/project/homura/style/nimage/_icon-refresh.png")
+    width 14px
+    height 13px
+    margin-top 12px
+    display block
+    float left
+  ._icon-commentLeft
+    background-image url(path+"/project/homura/style/nimage/_icon-commentLeft.png")
+    width 20px
+    height 19px
+    float left
+    margin-top 1px
+    display none
+  .comment_pts_num
+    float left
+    height 20px
+    line-height 20px
+    //color #ff0000
+    margin-left 4px
+    font-size 12px
+    color #8E8785
+  .banner
+    ._fixed
+      font-size 16px
+      width auto
+      height 20px
+      line-height 20px
+      border 0
+      padding 0 6px 0 0
+    .tab
+      cursor default
+      .btn
+        box-shadow none
+
+
+  ._icon-picture-o
+    width 60px
+    height @width
+//alert
+.alert
+  position relative
+  display block
+  margin 4px auto
+  padding 8px
+  border 1px solid #bce8f1
+  border-radius 2px
+  background-color #d9edf7
+  color #31708f
+  text-align left
+  font-size 13px
+  line-height 1.4
+
+.alert.success, .alert-success
+  background-color #dff0d8
+  border-color #d6e9c6
+  color #3c763d
+
+.alert.info, .alert-info
+  background-color #d9edf7
+  border-color #bce8f1
+  color #31708f
+
+.alert.warning, .alert-warning
+  background-color #fcf8e3
+  border-color #faebcc
+  color #8a6d3b
+
+.alert.danger, .alert.error, .alert-danger, .alert-error
+  background-color #f2dede
+  border-color #ebccd1
+  color #a94442
+a
+  cursor: pointer
+
+
+//absoulute
+.abs
+  position absolute
+  display block
+#area-editor,#area-comment,#stage
+  box-sizing: border-box
+  div
+    box-sizing: border-box
+  .l
+    float: left
+  .r
+    float: right
+  .btn
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    position: relative;
+    float: left;
+    margin: 2px 2px 0;
+    padding: 0 8px;
+    width: auto;
+    height: 28px;
+    outline: none;
+    outline: 0;
+    border: 1px solid #ccc;
+    border-radius: 1px;
+    background-color: #fff;
+    background-repeat: repeat-x;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    color: #333;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 14px;
+    line-height: 26px;
+    cursor: pointer;
+    font-family: "AcFun Symbol","Helvetica Neue",Helvetica,Arial,"Microsoft Yahei",STHeiti,sans-serif
+    &.success
+      color: #fff;
+      border: 1px solid #95ba12;
+      background-color: #95ba12;
+
+    &.danger
+      color: #fff;
+      border: 1px solid #e74c3c;
+      background-color: #e74c3c;
+    &.disabled
+      color: #fff;
+      border: 1px solid #666;
+      background-color: #666;
+      cursor: not-allowed;
+  .icon
+    margin-right: .2em
+//info
+#area-info
+  position fixed
+  bottom 24px
+  left 0
+  z-index 10
+  display none
+  margin 0
+  padding 0
+  width auto
+  text-align left
+
+  .item
+    color = color-primary
+    position relative
+    z-index 11
+    display table
+    margin 0 0 8px 0
+    padding 0 8px 0 4px
+    width auto
+    height auto
+    border-left 4px solid darken(color, 10%)
+    border-radius 1px
+    background-color color
+    box-shadow 0 1px 3px rgba(#000, 0.3)
+    color #fff
+    white-space pre-wrap
+    word-break break-all
+    font-weight bold
+    font-size 12px
+    line-height 24px
+    \*display block
+
+    arr = (color-success color-info color-warning color-danger color-debug)
+    for type, i in success info warning error debug
+      &.{type}
+        color = arr[i]
+        background-color color
+        border-color darken(color, 10%)
+#area-window
+  @extend .abs
+  top 0
+  left 0
+  z-index 5
+  overflow visible
+  margin 0 auto
+  padding 0
+  width 100%
+  height 0
+  text-align left
+  //win
+  .win
+    @extend .abs
+    z-index 5
+    margin 0
+    padding 0
+    width auto
+    height auto
+    border 1px solid #fff
+    background-color #fff
+    box-shadow 0 1px 3px rgba(#000, 0.3)
+    \*height auto !important
+
+    &.active
+      z-index 6
+
+    .block-title
+      @extend .no-select
+      position relative
+      z-index 1
+      width auto
+      height auto
+      text-align left
+      cursor move
+
+      .title
+        margin 0
+        padding-left 8px
+        width auto
+        height 36px
+        border-bottom 1px solid #ddd
+        background-color #fff
+        color #333
+        text-align left
+        font-size 16px
+        font-family Michroma, 'Segoe UI Light', 'Segoe UI', 'Segoe UI WP', 'Microsoft Jhenghei', '微软雅黑', sans-serif, Times
+        line-height 34px
+        cursor move
+
+      .area-tool
+        @extend .abs
+        top 0
+        right 0
+        left auto
+        margin 0
+        padding 0
+        width auto
+        height 32px
+        text-align right
+
+  .close
+    position relative
+    margin 0
+    width 36px
+    height 36px
+    text-align center
+    line-height 36px
+    cursor pointer
+    color #999
+    .icon
+      cursor pointer
+      margin 0
+
+  .mainer
+    position relative
+    top 0
+    left 0
+    overflow hidden
+    margin 0
+    padding 8px
+    width auto
+    height auto
+    background-color #fff
+    text-align left
+
+    .hint-window
+      color #999
+      text-align center
+      font-size 14px
+
+  #win-msg
+    left 0 !important
+    height auto !important
+
+    &:before
+      position absolute
+      top -7px
+      left 9px
+      display inline-block
+      border-right 7px solid transparent
+      border-bottom 7px solid rgba(#000, 0.2)
+      border-left 7px solid transparent
+      content ''
+
+    &:after
+      position absolute
+      top -6px
+      left 10px
+      display inline-block
+      border-right 6px solid transparent
+      border-bottom 6px solid #fff
+      border-left 6px solid transparent
+      content ''
+
+  //win-ensure
+  #win-ensure
+    z-index 11
+    width 320px
+    height 64px
+    border none
+    border-radius 2px
+    background rgba(0,0,0, 0.8)
+    text-align center
+
+    .btn
+      float none
+      margin 16px
+
+  .no-rgba #win-ensure
+    background none
+    background-color #111
+
+
+  //info-rise
+  .info-rise
+    @extend .abs
+    z-index 65535
+    display block
+    margin 0
+    padding 0 4px
+    width auto
+    height auto
+    border-radius 1px
+    background-color #f69
+    box-shadow 0 0 1px rgba(#000, 0.1)
+    color #fff
+    text-align center
+    font-size 12px
+    line-height 1.5
+    cursor default
+
+  //win-hint
+  .win-hint
+    color = color-primary
+    z-index 65535
+    display none
+    width auto
+    height auto
+    border none
+    border-radius 2px
+    background-color color
+    background-repeat repeat-x
+    box-shadow none
+    color #fff
+    text-shadow none
+    cursor pointer
+
+    arr = (color-success color-info color-warning color-danger color-debug)
+    for type, i in success info warning error debug
+      &.{type}
+        color = arr[i]
+        background-color color
+
+        .tail
+          color color
+
+    .mainer
+      margin 0
+      padding 8px 16px
+      min-width 32px
+      max-width 640px
+      width auto
+      background-color transparent
+      font-weight bold
+      font-size 12px
+      line-height 1.5
+      _width 160px
+
+    a
+      color #fff
+
+      &:hover
+        text-decoration underline
+
+    .tail
+      @extend .abs
+      @extend .inline-block
+      top auto
+      left auto
+      border 4px solid
+      color color
+      content ''
+
+      &.top
+        top auto
+        left 16px
+        border-right 4px solid transparent
+        border-bottom 4px solid transparent
+        border-left 4px solid transparent
+
+      &.bottom
+        top -8px
+        left 16px
+        border-top 4px solid transparent
+        border-right 4px solid transparent
+        border-left 4px solid transparent
+
+      &.left
+        top 8px
+        left 100%
+        border-top 4px solid transparent
+        border-right 4px solid transparent
+        border-bottom 4px solid transparent
+
+      &.right
+        top 8px
+        left -8px
+        border-top 4px solid transparent
+        border-bottom 4px solid transparent
+        border-left 4px solid transparent
+  //win-info
+  #win-info
+    z-index 255
+    display none
+    border 2px solid #999
+    box-shadow none
+
+    .mainer
+      padding 0
+      width 320px
+      height 144px
+
+      .l
+        width auto
+
+      .r
+        overflow hidden
+        width 220px
+        height 96px
+
+      .hint-info
+        @extend .abs
+        top 0
+        left 0
+        display block
+        width 100%
+        height 160px
+        color #666
+        text-align center
+        font-family Michroma, 'Segoe UI Light', 'Segoe UI', 'Segoe UI WP', 'Microsoft Jhenghei', '微软雅黑', sans-serif, Times
+        font-size 18px
+        line-height 160px
+
+    .card-video
+      .a
+        position relative
+        top 0
+        left 0
+        width 100%
+        height 80px
+
+        .r
+          height 80px
+
+      .b
+        position relative
+        top 0
+        left 0
+        overflow hidden
+        width 100%
+        height 64px
+        border-top 1px solid #eee
+        background-color #fafafa
+
+      .r
+        width 200px
+
+      .name
+        margin 4px 0 0 8px
+        width auto
+        height 16px
+        text-shadow none
+        font-size 11px
+        line-height 16px
+        color: #c66
+
+      .c
+        display block
+        margin 0 0 0 8px
+        width auto
+        height 16px
+        line-height 16px
+
+    .thumb
+      display: inline-block
+      position relative
+      margin 8px 0 0 8px
+      \*left 8px
+
+    .preview
+      width 100px
+      height 56.25px
+
+    .avatar
+      width 80px
+      height @width
+
+    .title
+      @extend .inline-block
+      overflow hidden
+      margin 8px 0 0 0
+      padding 0 8px 0 0
+      width auto
+      height 16px
+      color #08c
+      font-size 13px
+      line-height @height
+
+      &:hover
+        color #c33
+
+    .pts
+      color #777
+
+    .time
+      display block
+      margin 0 0 0 8px
+      width auto
+      height 16px
+      color #999
+      font-size 11px
+      line-height 16px
+
+    .channel
+      position absolute
+      right 8px
+      bottom 8px
+      margin 0
+      padding 0 8px
+      width auto
+      height 24px
+      border none
+      border-radius 1px
+      background-color #999
+      box-shadow 0 1px 2px rgba(#000, 0.1)
+      color #fff
+      text-align center
+      font-size 12px
+      line-height @height
+      cursor pointer
+
+      &:hover
+        background-color #08c
+
+    .desc
+      display block
+      overflow hidden
+      margin 2px 0 0 0
+      padding 0 8px 0 0
+      max-height 32px
+      width auto
+      height auto
+      color #999
+      font-size 12px
+      line-height 16px
+
+    .sign
+      display block
+      overflow hidden
+      margin 2px 0 0
+      padding-right 8px
+      width auto
+      height 48px
+      color #777
+      font-size 12px
+      line-height 16px
+
+    .name
+      @extend .inline-block
+      overflow hidden
+      margin 8px 0 0
+      width auto
+      height 18px
+      font-size 13px
+      line-height 18px
+
+    .name-videocard
+      top 4px
+      left 8px
+
+    .location
+      display block
+      overflow hidden
+      margin 0
+      width auto
+      height 16px
+      color #999
+      text-shadow none
+      font-size 12px
+      line-height 16px
+
+    .gender
+      margin-left 4px
+      color #fff
+      font-size 10px
+
+    .area-info
+      @extend .abs
+      height 32px
+      line-height 32px
+      width 100%
+      display block
+      font-size 12px
+      overflow hidden
+      left 0
+      top 112px
+      padding 0 8px
+      margin 0 auto
+      border-top 1px #eee solid
+      color #999
+      background-color #fafafa
+
+      a
+        color #999
+
+    .area-tool
+      @extend .abs
+      bottom 8px
+      left auto
+      right 8px
+      overflow hidden
+      margin 0
+      padding 0
+      width 80px
+      height 32px
+      line-height 32px
+      \*width 305px
+
+      .icon
+        margin 0
+
+      a
+        color #fff
+
+      #mail-user-info, #follow-user-info
+        background-color #999
+        width 32px
+        height @width
+        border-radius @width * 0.5
+        display block
+        text-align center
+        line-height @height
+        float left
+        margin-left 8px
+
+        &:hover
+          background-color #08c
+#curtain
+  top: 0;
+  left: 0;
+  z-index: 4;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  cursor: pointer;
+  position: fixed;
+.sp2017-juexingjianzheng
+  font-size 12px
+  padding 3px 8px
+  margin-left 5px
+  border-radius 10px
+  font-weight bold
+  background-color #fd4c5b
+  color #ffffff
+.verified-ico
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  position: relative;
+  top: 4px;
+.verified-1
+  background: url(../img/monkey.png) no-repeat 50% 50%
+  background-size: 18px 18px
+.verified-2
+  background: url(../img/verified-blue.png) no-repeat 50% 50%
+  background-size: 18px 18px
+.verified-3
+  background: url(../img/verified-yellow.png) no-repeat 50% 50%
+  background-size: 18px 18px

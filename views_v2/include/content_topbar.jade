@@ -1,0 +1,63 @@
+.header-top
+    .wp.clearfix.header-top-con
+        h1.fl.logo
+            a(href="#{config.domain}")
+                img(src="#{config.path}/img/logo.png",width="88",height="27")
+        ul#header-guide.fr.header-guide
+            li.guide-item.guide-user
+                a.user-avatar.item(href='#{config.rootDomain || ""}/member/',target="_blank")
+                    img(src='#{config.defaultImg}',width="30",height="30")
+                a.item.user-login(href='#{config.rootDomain || ""}/login/',target="_blank") 登录/注册
+                span.user-message-count.hidden
+                .guide-item-con
+                    p.clearfix
+                        a.fl.user-name(href='#{config.rootDomain || ""}/member/',target="_blank")
+                        a.fr.icon.icon-logout.user-logout(href="#{config.rootDomain || ''}/logout.aspx") 退出
+                    #user-message.user-message
+                    a.more(href="#{config.rootDomain || ''}/member/#area=mail",target="_blank") 查看更多
+
+            li.guide-item.guide-history
+                a.icon.icon-history.item(href="#{config.rootDomain || ''}/member/#area=history",target="_blank")
+                .guide-item-con
+                    ul
+                    a.more(href="#{config.rootDomain || ''}/member/#area=history",target="_blank") 查看更多
+                script(id="temp-history",type="text/template")
+                    li
+                        a(href="[url]",target="_blank") [title]
+                        p 浏览于[time]
+
+            li.guide-item.guide-upload
+                a.icon.icon-upload.item(href="#{config.rootDomain || ''}/member/#area=upload-video",target="_blank")
+                .guide-item-con
+                    ul
+                        li
+                            a(href="#{config.rootDomain || ''}/member/#area=upload-video",target="_blank") 投视频
+                        li
+                            a(href="#{config.rootDomain || ''}/member/#area=post-article",target="_blank") 投文章
+            li.guide-item
+                a.icon.icon-collect.item(href="#{config.rootDomain || ''}/member/#area=favourite",target="_blank")
+        .fr.download-app
+            a(href="#{config.rootDomain || ''}/app/",target="_blank")
+                i.icon.icon-app-phone
+                span 下载客户端
+            div(data-img="#{config.path}/img/app-download.png")
+        if headerSearchBox
+            #search-box.fr.search-box
+                form(id="search-form",target="_blank",method="get",action="#{config.rootDomain || ''}/search/")
+                    input#search-text(type="text",value="",autocomplete="off")
+                    button#search-btn.search-btn
+                        i.icon.icon-search
+                        span 搜索
+                    .search-result.hidden
+                    script(id="temp-search-hot",type="text/template")
+                        if infoData.hot
+                            -var hotWordsData = infoData.hot
+                            .hot-search 今日热搜
+                            ul.search-hot-ul
+                                each item,key in hotWordsData
+                                    if item.orderby <= 7
+                                        - var numberClass  = item.orderby <= 3 ? 'search-hot-item' : ''
+                                        li(class="#{numberClass}")
+                                            a(id="hot-key-count-#{key+1}",href="#{config.rootDomain || ''}/search/#query=#{item.hotword}",target="_blank")
+                                                span.num #{item.orderby}
+                                                b #{item.hotword}
