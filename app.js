@@ -20,7 +20,7 @@ const gzip = require('koa-gzip');
 const web_router = require('./routes/web_router');
 const api_router = require('./routes/api_router');
 //config
-const config = require('./common/config/config');
+const config = require('./common/config/global');
 const routerCacheConfig = require('./common/config/router_cache_config');
 
 // middlewares
