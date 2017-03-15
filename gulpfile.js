@@ -48,46 +48,46 @@
 		});
 	});
 
-	//打包js
-	gulp.task('js', function () {
-		//合并常用库文件
-		pump([
-			gulp.src([
-				'./public/static/js/lib/jquery.1.11.1.min.js',
-				'./public/static/js/plugin/jquery.cookie.js',
-				'./public/static/js/plugin/jquery.md5.js',
-				'./public/static/js/plugin/jquery.easing.js',
-				'./public/static/js/plugin/jquery.transit.min.js',
-				'./public/static/js/plugin/jquery.lazyload.min.js',
-				'./public/static/js/plugin/jquery.xdomainrequest.min.js',
-				'./public/static/js/plugin/store.min.js',
-				'./public/static/js/plugin/ZeroClipboard.min.js'
-			]),
-			uglify(),
-			concat('library.min.js'),
-			gulp.dest('./public/dist/js')
-		]);
+	// //打包js
+	// gulp.task('js', function () {
+	// 	//合并常用库文件
+	// 	pump([
+	// 		gulp.src([
+	// 			'./public/static/js/lib/jquery.1.11.1.min.js',
+	// 			'./public/static/js/plugin/jquery.cookie.js',
+	// 			'./public/static/js/plugin/jquery.md5.js',
+	// 			'./public/static/js/plugin/jquery.easing.js',
+	// 			'./public/static/js/plugin/jquery.transit.min.js',
+	// 			'./public/static/js/plugin/jquery.lazyload.min.js',
+	// 			'./public/static/js/plugin/jquery.xdomainrequest.min.js',
+	// 			'./public/static/js/plugin/store.min.js',
+	// 			'./public/static/js/plugin/ZeroClipboard.min.js'
+	// 		]),
+	// 		uglify(),
+	// 		concat('library.min.js'),
+	// 		gulp.dest('./public/dist/js')
+	// 	]);
 
-		//合并公共文件
-		pump([
-			gulp.src(['./public/static/js/core.js', './public/static/js/ready.js']),
-			uglify(),
-			concat('main.min.js'),
-			gulp.dest('./public/dist/js')
-		]);
+	// 	//合并公共文件
+	// 	pump([
+	// 		gulp.src(['./public/static/js/core.js', './public/static/js/ready.js']),
+	// 		uglify(),
+	// 		concat('main.min.js'),
+	// 		gulp.dest('./public/dist/js')
+	// 	]);
 
-		//压缩其余文件
-		pump([
-			gulp.src(['./public/static/js/**/*.js']),
-			uglify(),
-			rename(function (path) {
-				if (path.basename.search(/\.min/) == -1) {
-					path.basename += ".min";
-				}
-			}),
-			gulp.dest('./public/dist/js')
-		])
-	});
+	// 	//压缩其余文件
+	// 	pump([
+	// 		gulp.src(['./public/static/js/**/*.js']),
+	// 		uglify(),
+	// 		rename(function (path) {
+	// 			if (path.basename.search(/\.min/) == -1) {
+	// 				path.basename += ".min";
+	// 			}
+	// 		}),
+	// 		gulp.dest('./public/dist/js')
+	// 	])
+	// });
 
 
 	//压缩图片
