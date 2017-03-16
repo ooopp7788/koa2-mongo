@@ -1,7 +1,7 @@
 const superagent = require('superagent')
 const async = require('async')
 const logUtil = require('./log_util')
-// const cache = require('./cache_json_util')
+const cache = require('./cache_json_util')
 
 const get = async (ctx,apiList,option) => {
     let header = {
@@ -19,14 +19,22 @@ const get = async (ctx,apiList,option) => {
             let start = new Date()
             return new Promise((resolve,reject)=>{
                 superagent.get(url).set(header).end((error,res)=>{
-                    console.log(res)
-                    if (error) {
-                        logUtil.logError(ctx, error, new Date() - start)
-                        reject(error)          
+                    if (res){
+                        if (error) {
+                            logUtil.logError(ctx, error, new Date() - start)
+                            reject(error)          
+                        }
+                        let ms = new Date() - start
+                        logUtil.logRequest(res,ms)
+                        callback(null,res.body.vdata)
+                        cache.set(url,res.body)
+                    } else {
+                        let result = cache.get(url)
+                        if (!result) {
+                            reject('no cache file for' + url)
+                        }
+                        callback(null,result)
                     }
-                    let ms = new Date() - start
-                    logUtil.logRequest(res,ms);
-                    callback(null,res.body.vdata)
                 })
             })
         }, (error,result)=>{

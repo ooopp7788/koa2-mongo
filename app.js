@@ -39,7 +39,7 @@ app.use(gzip());
 //路由缓存服务
 app.use(routerCache(app, routerCacheConfig));
 
-app.use(views(__dirname + '/views_v2', {
+app.use(views(__dirname + '/view', {
     extension: 'jade'
 }));
 
