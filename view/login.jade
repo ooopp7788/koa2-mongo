@@ -1,0 +1,23 @@
+doctype
+html(lang="zh")
+    head
+        title #{title}
+    body
+        p Hello!World
+        p Wellcome to #{title}
+        h1
+            a(href="/") 首页
+        form(action="/n/api/login" ,method="get")
+            p
+                span 用户名:
+                br
+                input#name(name="name",type="text")
+            p
+                span 密码:
+                br
+                input#password(name="password",type="password")
+            p
+                input(type="submit",value="提交")
+            p
+                a(href="/register") 去注册
+

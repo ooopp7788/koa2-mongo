@@ -5,7 +5,7 @@ export default async function (ctx, next) {
   console.log('index')
 
   await ctx.render('index', {
-    title : '首页'
+    title : '登陆'
   })
 }
 
